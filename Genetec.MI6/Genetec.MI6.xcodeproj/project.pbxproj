@@ -21,6 +21,11 @@
 		3C54DD261840083A00CE9F15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD081840083A00CE9F15 /* UIKit.framework */; };
 		3C54DD2E1840083A00CE9F15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD2C1840083A00CE9F15 /* InfoPlist.strings */; };
 		3C54DD301840083A00CE9F15 /* Genetec_MI6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD2F1840083A00CE9F15 /* Genetec_MI6Tests.m */; };
+		3CB57132184009B0005786D6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB57131184009B0005786D6 /* CoreData.framework */; };
+		3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713418400A5A005786D6 /* CoreDataHelper.m */; };
+		3CB5713A18400A5A005786D6 /* FetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713618400A5A005786D6 /* FetchRequestFactory.m */; };
+		3CB5713B18400A5A005786D6 /* EntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713818400A5A005786D6 /* EntityManager.m */; };
+		3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,15 @@
 		3C54DD2B1840083A00CE9F15 /* Genetec.MI6Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Genetec.MI6Tests-Info.plist"; sourceTree = "<group>"; };
 		3C54DD2D1840083A00CE9F15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C54DD2F1840083A00CE9F15 /* Genetec_MI6Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Genetec_MI6Tests.m; sourceTree = "<group>"; };
+		3CB57131184009B0005786D6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3CB5713318400A5A005786D6 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		3CB5713418400A5A005786D6 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		3CB5713518400A5A005786D6 /* FetchRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchRequestFactory.h; sourceTree = "<group>"; };
+		3CB5713618400A5A005786D6 /* FetchRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchRequestFactory.m; sourceTree = "<group>"; };
+		3CB5713718400A5A005786D6 /* EntityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityManager.h; sourceTree = "<group>"; };
+		3CB5713818400A5A005786D6 /* EntityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityManager.m; sourceTree = "<group>"; };
+		3CB5713E18400CB5005786D6 /* MI6DocumentDirectoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6DocumentDirectoryHelper.h; sourceTree = "<group>"; };
+		3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6DocumentDirectoryHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB57132184009B0005786D6 /* CoreData.framework in Frameworks */,
 				3C54DD071840083A00CE9F15 /* CoreGraphics.framework in Frameworks */,
 				3C54DD091840083A00CE9F15 /* UIKit.framework in Frameworks */,
 				3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */,
@@ -101,6 +116,7 @@
 		3C54DD031840083A00CE9F15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3CB57131184009B0005786D6 /* CoreData.framework */,
 				3C54DD041840083A00CE9F15 /* Foundation.framework */,
 				3C54DD061840083A00CE9F15 /* CoreGraphics.framework */,
 				3C54DD081840083A00CE9F15 /* UIKit.framework */,
@@ -112,6 +128,8 @@
 		3C54DD0A1840083A00CE9F15 /* Genetec.MI6 */ = {
 			isa = PBXGroup;
 			children = (
+				3CB5713D18400CA7005786D6 /* Utilities */,
+				3CB5713C18400A95005786D6 /* CoreData */,
 				3C54DD131840083A00CE9F15 /* MI6AppDelegate.h */,
 				3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */,
 				3C54DD161840083A00CE9F15 /* Main.storyboard */,
@@ -150,6 +168,28 @@
 				3C54DD2C1840083A00CE9F15 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CB5713C18400A95005786D6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3CB5713318400A5A005786D6 /* CoreDataHelper.h */,
+				3CB5713418400A5A005786D6 /* CoreDataHelper.m */,
+				3CB5713518400A5A005786D6 /* FetchRequestFactory.h */,
+				3CB5713618400A5A005786D6 /* FetchRequestFactory.m */,
+				3CB5713718400A5A005786D6 /* EntityManager.h */,
+				3CB5713818400A5A005786D6 /* EntityManager.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		3CB5713D18400CA7005786D6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3CB5713E18400CB5005786D6 /* MI6DocumentDirectoryHelper.h */,
+				3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +290,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB5713B18400A5A005786D6 /* EntityManager.m in Sources */,
+				3CB5713A18400A5A005786D6 /* FetchRequestFactory.m in Sources */,
 				3C54DD111840083A00CE9F15 /* main.m in Sources */,
 				3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */,
+				3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */,
+				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
 				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +505,7 @@
 				3C54DD351840083A00CE9F15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C54DD361840083A00CE9F15 /* Build configuration list for PBXNativeTarget "Genetec.MI6Tests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +514,7 @@
 				3C54DD381840083A00CE9F15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
