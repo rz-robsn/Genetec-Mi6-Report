@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C4270C218401CA6000DBC2F /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270C118401CA6000DBC2F /* Audio.m */; };
+		3C4270C518401CA7000DBC2F /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270C418401CA7000DBC2F /* Video.m */; };
+		3C4270C818401CA7000DBC2F /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270C718401CA7000DBC2F /* Image.m */; };
+		3C4270CB18401CA7000DBC2F /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270CA18401CA7000DBC2F /* Coordinate.m */; };
+		3C4270CE18401CA7000DBC2F /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270CD18401CA7000DBC2F /* Note.m */; };
+		3C4270D118401CA7000DBC2F /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D018401CA7000DBC2F /* Report.m */; };
+		3C4270D418401CA7000DBC2F /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D318401CA7000DBC2F /* Agent.m */; };
 		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
 		3C54DD071840083A00CE9F15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD061840083A00CE9F15 /* CoreGraphics.framework */; };
 		3C54DD091840083A00CE9F15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD081840083A00CE9F15 /* UIKit.framework */; };
@@ -26,6 +33,7 @@
 		3CB5713A18400A5A005786D6 /* FetchRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713618400A5A005786D6 /* FetchRequestFactory.m */; };
 		3CB5713B18400A5A005786D6 /* EntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713818400A5A005786D6 /* EntityManager.m */; };
 		3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */; };
+		3CB571431840111C005786D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CB571411840111C005786D6 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C4270C018401CA6000DBC2F /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio.h; path = Genetec.MI6/Audio.h; sourceTree = "<group>"; };
+		3C4270C118401CA6000DBC2F /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Audio.m; path = Genetec.MI6/Audio.m; sourceTree = "<group>"; };
+		3C4270C318401CA7000DBC2F /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = Genetec.MI6/Video.h; sourceTree = "<group>"; };
+		3C4270C418401CA7000DBC2F /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = Genetec.MI6/Video.m; sourceTree = "<group>"; };
+		3C4270C618401CA7000DBC2F /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = Genetec.MI6/Image.h; sourceTree = "<group>"; };
+		3C4270C718401CA7000DBC2F /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = Genetec.MI6/Image.m; sourceTree = "<group>"; };
+		3C4270C918401CA7000DBC2F /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Genetec.MI6/Coordinate.h; sourceTree = "<group>"; };
+		3C4270CA18401CA7000DBC2F /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinate.m; path = Genetec.MI6/Coordinate.m; sourceTree = "<group>"; };
+		3C4270CC18401CA7000DBC2F /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Genetec.MI6/Note.h; sourceTree = "<group>"; };
+		3C4270CD18401CA7000DBC2F /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Genetec.MI6/Note.m; sourceTree = "<group>"; };
+		3C4270CF18401CA7000DBC2F /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Report.h; path = Genetec.MI6/Report.h; sourceTree = "<group>"; };
+		3C4270D018401CA7000DBC2F /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Genetec.MI6/Report.m; sourceTree = "<group>"; };
+		3C4270D218401CA7000DBC2F /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agent.h; path = Genetec.MI6/Agent.h; sourceTree = "<group>"; };
+		3C4270D318401CA7000DBC2F /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Agent.m; path = Genetec.MI6/Agent.m; sourceTree = "<group>"; };
 		3C54DD011840083A00CE9F15 /* Genetec.MI6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Genetec.MI6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C54DD041840083A00CE9F15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C54DD061840083A00CE9F15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,6 +89,7 @@
 		3CB5713818400A5A005786D6 /* EntityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityManager.m; sourceTree = "<group>"; };
 		3CB5713E18400CB5005786D6 /* MI6DocumentDirectoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6DocumentDirectoryHelper.h; sourceTree = "<group>"; };
 		3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6DocumentDirectoryHelper.m; sourceTree = "<group>"; };
+		3CB571421840111C005786D6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +117,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C4270D518401CB3000DBC2F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				3C4270D218401CA7000DBC2F /* Agent.h */,
+				3C4270D318401CA7000DBC2F /* Agent.m */,
+				3C4270CF18401CA7000DBC2F /* Report.h */,
+				3C4270D018401CA7000DBC2F /* Report.m */,
+				3C4270CC18401CA7000DBC2F /* Note.h */,
+				3C4270CD18401CA7000DBC2F /* Note.m */,
+				3C4270C918401CA7000DBC2F /* Coordinate.h */,
+				3C4270CA18401CA7000DBC2F /* Coordinate.m */,
+				3C4270C618401CA7000DBC2F /* Image.h */,
+				3C4270C718401CA7000DBC2F /* Image.m */,
+				3C4270C318401CA7000DBC2F /* Video.h */,
+				3C4270C418401CA7000DBC2F /* Video.m */,
+				3C4270C018401CA6000DBC2F /* Audio.h */,
+				3C4270C118401CA6000DBC2F /* Audio.m */,
+			);
+			name = Entities;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3C54DCF81840083A00CE9F15 = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +182,7 @@
 				3C54DD1A1840083A00CE9F15 /* MI6ViewController.m */,
 				3C54DD1C1840083A00CE9F15 /* Images.xcassets */,
 				3C54DD0B1840083A00CE9F15 /* Supporting Files */,
+				3CB571411840111C005786D6 /* Model.xcdatamodeld */,
 			);
 			path = Genetec.MI6;
 			sourceTree = "<group>";
@@ -173,6 +219,7 @@
 		3CB5713C18400A95005786D6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3C4270D518401CB3000DBC2F /* Entities */,
 				3CB5713318400A5A005786D6 /* CoreDataHelper.h */,
 				3CB5713418400A5A005786D6 /* CoreDataHelper.m */,
 				3CB5713518400A5A005786D6 /* FetchRequestFactory.h */,
@@ -290,9 +337,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C4270CE18401CA7000DBC2F /* Note.m in Sources */,
+				3C4270D118401CA7000DBC2F /* Report.m in Sources */,
+				3C4270C818401CA7000DBC2F /* Image.m in Sources */,
+				3C4270D418401CA7000DBC2F /* Agent.m in Sources */,
+				3C4270C218401CA6000DBC2F /* Audio.m in Sources */,
 				3CB5713B18400A5A005786D6 /* EntityManager.m in Sources */,
 				3CB5713A18400A5A005786D6 /* FetchRequestFactory.m in Sources */,
+				3C4270C518401CA7000DBC2F /* Video.m in Sources */,
 				3C54DD111840083A00CE9F15 /* main.m in Sources */,
+				3CB571431840111C005786D6 /* Model.xcdatamodeld in Sources */,
+				3C4270CB18401CA7000DBC2F /* Coordinate.m in Sources */,
 				3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */,
 				3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */,
 				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
@@ -517,6 +572,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3CB571411840111C005786D6 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3CB571421840111C005786D6 /* Model.xcdatamodel */,
+			);
+			currentVersion = 3CB571421840111C005786D6 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3C54DCF91840083A00CE9F15 /* Project object */;
 }

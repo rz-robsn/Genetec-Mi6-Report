@@ -32,7 +32,7 @@ static CoreDataHelper* instance;
 {
     if (instance == nil)
     {
-        NSString *cdataPath = [[[MI6DocumentDirectoryHelper applicationDocumentsDirectory] path] stringByAppendingPathComponent:@"DataMobile.sqlite"];
+        NSString *cdataPath = [[[MI6DocumentDirectoryHelper applicationDocumentsDirectory] path] stringByAppendingPathComponent:@"Database.sqlite"];
         NSURL *cdataUrl = [NSURL fileURLWithPath:cdataPath];
         
         instance = [[CoreDataHelper alloc] init];
@@ -94,7 +94,7 @@ static CoreDataHelper* instance;
     {
         return __managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"DataMobile" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Model" withExtension:@"momd"];
     __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return __managedObjectModel;
 }
