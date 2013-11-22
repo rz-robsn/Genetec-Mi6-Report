@@ -21,6 +21,7 @@
 		3C54DD261840083A00CE9F15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD081840083A00CE9F15 /* UIKit.framework */; };
 		3C54DD2E1840083A00CE9F15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD2C1840083A00CE9F15 /* InfoPlist.strings */; };
 		3C54DD301840083A00CE9F15 /* Genetec_MI6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD2F1840083A00CE9F15 /* Genetec_MI6Tests.m */; };
+		D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83D486E18400ED70072FBCE /* MI6MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		3C54DD2B1840083A00CE9F15 /* Genetec.MI6Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Genetec.MI6Tests-Info.plist"; sourceTree = "<group>"; };
 		3C54DD2D1840083A00CE9F15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C54DD2F1840083A00CE9F15 /* Genetec_MI6Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Genetec_MI6Tests.m; sourceTree = "<group>"; };
+		D83D486D18400ED70072FBCE /* MI6MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6MainViewController.h; sourceTree = "<group>"; };
+		D83D486E18400ED70072FBCE /* MI6MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		3C54DD0A1840083A00CE9F15 /* Genetec.MI6 */ = {
 			isa = PBXGroup;
 			children = (
+				D83D486C18400E610072FBCE /* Controllers */,
 				3C54DD131840083A00CE9F15 /* MI6AppDelegate.h */,
 				3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */,
 				3C54DD161840083A00CE9F15 /* Main.storyboard */,
@@ -150,6 +154,15 @@
 				3C54DD2C1840083A00CE9F15 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D83D486C18400E610072FBCE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D83D486D18400ED70072FBCE /* MI6MainViewController.h */,
+				D83D486E18400ED70072FBCE /* MI6MainViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +265,7 @@
 			files = (
 				3C54DD111840083A00CE9F15 /* main.m in Sources */,
 				3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */,
+				D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */,
 				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +475,7 @@
 				3C54DD351840083A00CE9F15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C54DD361840083A00CE9F15 /* Build configuration list for PBXNativeTarget "Genetec.MI6Tests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +484,7 @@
 				3C54DD381840083A00CE9F15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
