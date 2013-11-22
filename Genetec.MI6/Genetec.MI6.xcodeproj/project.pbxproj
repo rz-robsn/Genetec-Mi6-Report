@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
+		3C54DD071840083A00CE9F15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD061840083A00CE9F15 /* CoreGraphics.framework */; };
+		3C54DD091840083A00CE9F15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD081840083A00CE9F15 /* UIKit.framework */; };
+		3C54DD0F1840083A00CE9F15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD0D1840083A00CE9F15 /* InfoPlist.strings */; };
+		3C54DD111840083A00CE9F15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD101840083A00CE9F15 /* main.m */; };
+		3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */; };
+		3C54DD181840083A00CE9F15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD161840083A00CE9F15 /* Main.storyboard */; };
+		3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD1A1840083A00CE9F15 /* MI6ViewController.m */; };
+		3C54DD1D1840083A00CE9F15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD1C1840083A00CE9F15 /* Images.xcassets */; };
+		3C54DD241840083A00CE9F15 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD231840083A00CE9F15 /* XCTest.framework */; };
+		3C54DD251840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
+		3C54DD261840083A00CE9F15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD081840083A00CE9F15 /* UIKit.framework */; };
+		3C54DD2E1840083A00CE9F15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD2C1840083A00CE9F15 /* InfoPlist.strings */; };
+		3C54DD301840083A00CE9F15 /* Genetec_MI6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD2F1840083A00CE9F15 /* Genetec_MI6Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C54DD271840083A00CE9F15 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C54DCF91840083A00CE9F15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C54DD001840083A00CE9F15;
+			remoteInfo = Genetec.MI6;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3C54DD011840083A00CE9F15 /* Genetec.MI6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Genetec.MI6.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C54DD041840083A00CE9F15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3C54DD061840083A00CE9F15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3C54DD081840083A00CE9F15 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3C54DD0C1840083A00CE9F15 /* Genetec.MI6-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Genetec.MI6-Info.plist"; sourceTree = "<group>"; };
+		3C54DD0E1840083A00CE9F15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3C54DD101840083A00CE9F15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C54DD121840083A00CE9F15 /* Genetec.MI6-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Genetec.MI6-Prefix.pch"; sourceTree = "<group>"; };
+		3C54DD131840083A00CE9F15 /* MI6AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MI6AppDelegate.h; sourceTree = "<group>"; };
+		3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MI6AppDelegate.m; sourceTree = "<group>"; };
+		3C54DD171840083A00CE9F15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C54DD191840083A00CE9F15 /* MI6ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MI6ViewController.h; sourceTree = "<group>"; };
+		3C54DD1A1840083A00CE9F15 /* MI6ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MI6ViewController.m; sourceTree = "<group>"; };
+		3C54DD1C1840083A00CE9F15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3C54DD221840083A00CE9F15 /* Genetec.MI6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Genetec.MI6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C54DD231840083A00CE9F15 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3C54DD2B1840083A00CE9F15 /* Genetec.MI6Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Genetec.MI6Tests-Info.plist"; sourceTree = "<group>"; };
+		3C54DD2D1840083A00CE9F15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3C54DD2F1840083A00CE9F15 /* Genetec_MI6Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Genetec_MI6Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C54DCFE1840083A00CE9F15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C54DD071840083A00CE9F15 /* CoreGraphics.framework in Frameworks */,
+				3C54DD091840083A00CE9F15 /* UIKit.framework in Frameworks */,
+				3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C54DD1F1840083A00CE9F15 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C54DD241840083A00CE9F15 /* XCTest.framework in Frameworks */,
+				3C54DD261840083A00CE9F15 /* UIKit.framework in Frameworks */,
+				3C54DD251840083A00CE9F15 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C54DCF81840083A00CE9F15 = {
+			isa = PBXGroup;
+			children = (
+				3C54DD0A1840083A00CE9F15 /* Genetec.MI6 */,
+				3C54DD291840083A00CE9F15 /* Genetec.MI6Tests */,
+				3C54DD031840083A00CE9F15 /* Frameworks */,
+				3C54DD021840083A00CE9F15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C54DD021840083A00CE9F15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C54DD011840083A00CE9F15 /* Genetec.MI6.app */,
+				3C54DD221840083A00CE9F15 /* Genetec.MI6Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C54DD031840083A00CE9F15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C54DD041840083A00CE9F15 /* Foundation.framework */,
+				3C54DD061840083A00CE9F15 /* CoreGraphics.framework */,
+				3C54DD081840083A00CE9F15 /* UIKit.framework */,
+				3C54DD231840083A00CE9F15 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C54DD0A1840083A00CE9F15 /* Genetec.MI6 */ = {
+			isa = PBXGroup;
+			children = (
+				3C54DD131840083A00CE9F15 /* MI6AppDelegate.h */,
+				3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */,
+				3C54DD161840083A00CE9F15 /* Main.storyboard */,
+				3C54DD191840083A00CE9F15 /* MI6ViewController.h */,
+				3C54DD1A1840083A00CE9F15 /* MI6ViewController.m */,
+				3C54DD1C1840083A00CE9F15 /* Images.xcassets */,
+				3C54DD0B1840083A00CE9F15 /* Supporting Files */,
+			);
+			path = Genetec.MI6;
+			sourceTree = "<group>";
+		};
+		3C54DD0B1840083A00CE9F15 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C54DD0C1840083A00CE9F15 /* Genetec.MI6-Info.plist */,
+				3C54DD0D1840083A00CE9F15 /* InfoPlist.strings */,
+				3C54DD101840083A00CE9F15 /* main.m */,
+				3C54DD121840083A00CE9F15 /* Genetec.MI6-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C54DD291840083A00CE9F15 /* Genetec.MI6Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3C54DD2F1840083A00CE9F15 /* Genetec_MI6Tests.m */,
+				3C54DD2A1840083A00CE9F15 /* Supporting Files */,
+			);
+			path = Genetec.MI6Tests;
+			sourceTree = "<group>";
+		};
+		3C54DD2A1840083A00CE9F15 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C54DD2B1840083A00CE9F15 /* Genetec.MI6Tests-Info.plist */,
+				3C54DD2C1840083A00CE9F15 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C54DD001840083A00CE9F15 /* Genetec.MI6 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C54DD331840083A00CE9F15 /* Build configuration list for PBXNativeTarget "Genetec.MI6" */;
+			buildPhases = (
+				3C54DCFD1840083A00CE9F15 /* Sources */,
+				3C54DCFE1840083A00CE9F15 /* Frameworks */,
+				3C54DCFF1840083A00CE9F15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Genetec.MI6;
+			productName = Genetec.MI6;
+			productReference = 3C54DD011840083A00CE9F15 /* Genetec.MI6.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C54DD211840083A00CE9F15 /* Genetec.MI6Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C54DD361840083A00CE9F15 /* Build configuration list for PBXNativeTarget "Genetec.MI6Tests" */;
+			buildPhases = (
+				3C54DD1E1840083A00CE9F15 /* Sources */,
+				3C54DD1F1840083A00CE9F15 /* Frameworks */,
+				3C54DD201840083A00CE9F15 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C54DD281840083A00CE9F15 /* PBXTargetDependency */,
+			);
+			name = Genetec.MI6Tests;
+			productName = Genetec.MI6Tests;
+			productReference = 3C54DD221840083A00CE9F15 /* Genetec.MI6Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C54DCF91840083A00CE9F15 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MI6;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Zachary Patterson";
+				TargetAttributes = {
+					3C54DD211840083A00CE9F15 = {
+						TestTargetID = 3C54DD001840083A00CE9F15;
+					};
+				};
+			};
+			buildConfigurationList = 3C54DCFC1840083A00CE9F15 /* Build configuration list for PBXProject "Genetec.MI6" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C54DCF81840083A00CE9F15;
+			productRefGroup = 3C54DD021840083A00CE9F15 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C54DD001840083A00CE9F15 /* Genetec.MI6 */,
+				3C54DD211840083A00CE9F15 /* Genetec.MI6Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C54DCFF1840083A00CE9F15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C54DD1D1840083A00CE9F15 /* Images.xcassets in Resources */,
+				3C54DD0F1840083A00CE9F15 /* InfoPlist.strings in Resources */,
+				3C54DD181840083A00CE9F15 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C54DD201840083A00CE9F15 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C54DD2E1840083A00CE9F15 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C54DCFD1840083A00CE9F15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C54DD111840083A00CE9F15 /* main.m in Sources */,
+				3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */,
+				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C54DD1E1840083A00CE9F15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C54DD301840083A00CE9F15 /* Genetec_MI6Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C54DD281840083A00CE9F15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C54DD001840083A00CE9F15 /* Genetec.MI6 */;
+			targetProxy = 3C54DD271840083A00CE9F15 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3C54DD0D1840083A00CE9F15 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C54DD0E1840083A00CE9F15 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3C54DD161840083A00CE9F15 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C54DD171840083A00CE9F15 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3C54DD2C1840083A00CE9F15 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C54DD2D1840083A00CE9F15 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C54DD311840083A00CE9F15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3C54DD321840083A00CE9F15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C54DD341840083A00CE9F15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Genetec.MI6/Genetec.MI6-Prefix.pch";
+				INFOPLIST_FILE = "Genetec.MI6/Genetec.MI6-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3C54DD351840083A00CE9F15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Genetec.MI6/Genetec.MI6-Prefix.pch";
+				INFOPLIST_FILE = "Genetec.MI6/Genetec.MI6-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3C54DD371840083A00CE9F15 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Genetec.MI6.app/Genetec.MI6";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Genetec.MI6/Genetec.MI6-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Genetec.MI6Tests/Genetec.MI6Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3C54DD381840083A00CE9F15 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Genetec.MI6.app/Genetec.MI6";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Genetec.MI6/Genetec.MI6-Prefix.pch";
+				INFOPLIST_FILE = "Genetec.MI6Tests/Genetec.MI6Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C54DCFC1840083A00CE9F15 /* Build configuration list for PBXProject "Genetec.MI6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C54DD311840083A00CE9F15 /* Debug */,
+				3C54DD321840083A00CE9F15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C54DD331840083A00CE9F15 /* Build configuration list for PBXNativeTarget "Genetec.MI6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C54DD341840083A00CE9F15 /* Debug */,
+				3C54DD351840083A00CE9F15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3C54DD361840083A00CE9F15 /* Build configuration list for PBXNativeTarget "Genetec.MI6Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C54DD371840083A00CE9F15 /* Debug */,
+				3C54DD381840083A00CE9F15 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C54DCF91840083A00CE9F15 /* Project object */;
+}
