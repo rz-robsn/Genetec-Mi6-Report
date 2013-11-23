@@ -209,6 +209,7 @@
     
     detector.media = media;
     [detector startFetchingCurrentLocation];
+    [_datasource update];
     [[self tableView] reloadData];
     
     [self dismissViewControllerAnimated:YES completion:nil];
