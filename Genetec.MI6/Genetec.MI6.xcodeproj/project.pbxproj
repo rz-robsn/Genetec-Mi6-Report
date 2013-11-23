@@ -13,6 +13,9 @@
 		3C13D0BC1840843200A83EB6 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0BB1840843200A83EB6 /* Media.m */; };
 		3C13D0BF18409C6B00A83EB6 /* MI6DisplayMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0BE18409C6B00A83EB6 /* MI6DisplayMediaViewController.m */; };
 		3C13D0C11840B40900A83EB6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0C01840B40900A83EB6 /* MediaPlayer.framework */; };
+		3C13D0C31840CA0300A83EB6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0C21840CA0300A83EB6 /* CoreLocation.framework */; };
+		3C13D0C51840CA2600A83EB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0C41840CA2600A83EB6 /* MapKit.framework */; };
+		3C13D0C81840CA8F00A83EB6 /* MI6GPSLocationDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0C71840CA8F00A83EB6 /* MI6GPSLocationDetector.m */; };
 		3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */; };
 		3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270DB18403861000DBC2F /* MI6NotesDataSource.m */; };
 		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
@@ -60,6 +63,11 @@
 		3C13D0BD18409C6B00A83EB6 /* MI6DisplayMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6DisplayMediaViewController.h; sourceTree = "<group>"; };
 		3C13D0BE18409C6B00A83EB6 /* MI6DisplayMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6DisplayMediaViewController.m; sourceTree = "<group>"; };
 		3C13D0C01840B40900A83EB6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		3C13D0C21840CA0300A83EB6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3C13D0C41840CA2600A83EB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3C13D0C61840CA8F00A83EB6 /* MI6GPSLocationDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6GPSLocationDetector.h; sourceTree = "<group>"; };
+		3C13D0C71840CA8F00A83EB6 /* MI6GPSLocationDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6GPSLocationDetector.m; sourceTree = "<group>"; };
+		3C13D0C91840CB8700A83EB6 /* MI6GPSLocationDetectorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MI6GPSLocationDetectorDelegate.h; sourceTree = "<group>"; };
 		3C4270D618402A85000DBC2F /* MI6SingleReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6SingleReportViewController.h; sourceTree = "<group>"; };
 		3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6SingleReportViewController.m; sourceTree = "<group>"; };
 		3C4270DA18403861000DBC2F /* MI6NotesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6NotesDataSource.h; sourceTree = "<group>"; };
@@ -102,6 +110,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C13D0C51840CA2600A83EB6 /* MapKit.framework in Frameworks */,
+				3C13D0C31840CA0300A83EB6 /* CoreLocation.framework in Frameworks */,
 				3C13D0C11840B40900A83EB6 /* MediaPlayer.framework in Frameworks */,
 				3CB57132184009B0005786D6 /* CoreData.framework in Frameworks */,
 				3C54DD071840083A00CE9F15 /* CoreGraphics.framework in Frameworks */,
@@ -170,6 +180,8 @@
 		3C54DD031840083A00CE9F15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C13D0C41840CA2600A83EB6 /* MapKit.framework */,
+				3C13D0C21840CA0300A83EB6 /* CoreLocation.framework */,
 				3C13D0C01840B40900A83EB6 /* MediaPlayer.framework */,
 				3CB57131184009B0005786D6 /* CoreData.framework */,
 				3C54DD041840083A00CE9F15 /* Foundation.framework */,
@@ -245,6 +257,9 @@
 			children = (
 				3CB5713E18400CB5005786D6 /* MI6DocumentDirectoryHelper.h */,
 				3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */,
+				3C13D0C61840CA8F00A83EB6 /* MI6GPSLocationDetector.h */,
+				3C13D0C71840CA8F00A83EB6 /* MI6GPSLocationDetector.m */,
+				3C13D0C91840CB8700A83EB6 /* MI6GPSLocationDetectorDelegate.h */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -374,6 +389,7 @@
 				3C13D0B61840702400A83EB6 /* MI6Image.m in Sources */,
 				3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */,
 				3C13D0BF18409C6B00A83EB6 /* MI6DisplayMediaViewController.m in Sources */,
+				3C13D0C81840CA8F00A83EB6 /* MI6GPSLocationDetector.m in Sources */,
 				3C13D0AA1840585100A83EB6 /* Agent.m in Sources */,
 				D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */,
 				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,

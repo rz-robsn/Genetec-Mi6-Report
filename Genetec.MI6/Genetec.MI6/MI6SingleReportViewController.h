@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MI6GPSLocationDetectorDelegate.h"
 
 @class Report;
 
-@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate , UIAlertViewDelegate, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate>
+@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate ,
+                                                            UIAlertViewDelegate,
+                                                            UITableViewDelegate,
+                                                            UIImagePickerControllerDelegate,
+                                                            UINavigationControllerDelegate,
+                                                            UIGestureRecognizerDelegate,
+                                                            MI6GPSLocationDetectorDelegate>
 
 @property (strong, nonatomic) Report* report;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

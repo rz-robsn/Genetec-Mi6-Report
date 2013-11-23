@@ -15,16 +15,19 @@
 #import "MI6NotesDataSource.h"
 #import "MI6Image.h"
 #import "MI6DocumentDirectoryHelper.h"
+#import "MI6GPSLocationDetector.h"
 
 @interface MI6SingleReportViewController ()
 
 @property (strong,nonatomic) MI6NotesDataSource *datasource;
+@property (strong, nonatomic) MI6GPSLocationDetector* detector;
 
 @end
 
 @implementation MI6SingleReportViewController
 
 @synthesize report;
+@synthesize detector;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +44,8 @@
     
 	// Do any additional setup after loading the view.
     self.titleTextField.text = report.title;
+    self.detector = [[MI6GPSLocationDetector alloc] init];
+    self.detector.delegate = self;
     
     self.tapRecognizer.cancelsTouchesInView = NO;
     
@@ -98,6 +103,7 @@
     Media* media = (Media*)[self.datasource.notes objectAtIndex:selectedRowIndexPath.row];
     if ([media.type intValue] == MEDIA_TYPE_VIDEO)
     {
+        // Play video
         NSURL* videoUrl = [[NSURL alloc] initFileURLWithPath:media.text];
         NSData* data = [NSData dataWithContentsOfURL:videoUrl];
         NSLog(@"%@, %l", videoUrl, [data length]);
@@ -172,8 +178,14 @@
     }
     [[[CoreDataHelper instance] entityManager] saveContext];
     
+    detector.media = media;
+    [detector startFetchingCurrentLocation];
     [[self tableView] reloadData];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    
     // Request to save the image to camera roll
     //  NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(imageL)];
     
@@ -205,6 +217,19 @@
     }
     
     
+}
+
+#pragma mark - MI6GPSLocationDetectorDelegate
+
+-(void)LocationDetector:(MI6GPSLocationDetector *)locationDetector didFindCurrentLocation:(CLLocation *)location
+{
+    locationDetector.media.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
+    locationDetector.media.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+}
+
+-(void)LocationDetector:(MI6GPSLocationDetector *)locationDetector didFailToFindCurrentLocationWithError:(NSError *)error
+{
+
 }
 
 @end
