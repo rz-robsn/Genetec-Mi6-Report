@@ -68,6 +68,8 @@
         timer = nil;
     }
     [self.manager stopUpdatingLocation];
+    self.report = nil;
+    self.media = nil;
 }
 
 # pragma mark - CLLocationManagerDelegate

@@ -23,6 +23,7 @@
 @property (strong,nonatomic) MI6ReportsDataSource* datasource;
 @property (strong, nonatomic) MI6GPSLocationDetector* detector;
 
+
 @end
 
 @implementation MI6MainViewController
@@ -145,6 +146,7 @@ int sendByActionSheet; // when press new note set this to 1;
     [[[CoreDataHelper instance] entityManager] saveContext];
     
     detector.media = media;
+    detector.report = reportWithImage;
     [detector startFetchingCurrentLocation];
     sendByActionSheet = 1;
     [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
@@ -280,6 +282,9 @@ int sendByActionSheet; // when press new note set this to 1;
         if(sendByActionSheet == 1)
         {
             Report* report = [[[CoreDataHelper instance] entityManager] createNewReport];
+            detector.report = report;
+            [detector startFetchingCurrentLocation];
+            
             [destVc setReport:report];
             sendByActionSheet = 0;
         }
@@ -296,8 +301,14 @@ int sendByActionSheet; // when press new note set this to 1;
 
 -(void)LocationDetector:(MI6GPSLocationDetector *)locationDetector didFindCurrentLocation:(CLLocation *)location
 {
-    locationDetector.media.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
-    locationDetector.media.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+    locationDetector.report.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
+    locationDetector.report.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+    
+    if (locationDetector.media != nil)
+    {
+        locationDetector.media.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
+        locationDetector.media.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+    }
 }
 
 -(void)LocationDetector:(MI6GPSLocationDetector *)locationDetector didFailToFindCurrentLocationWithError:(NSError *)error
