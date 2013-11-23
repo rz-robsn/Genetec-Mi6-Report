@@ -54,6 +54,8 @@
     self.searchBar.delegate = self;
     self.filteredArray = [NSMutableArray arrayWithCapacity:[self.arrayOfReportTitle count]];
     [self.tableView reloadData];
+    
+    [self performSegueWithIdentifier:@"SingleReportSegue" sender:nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

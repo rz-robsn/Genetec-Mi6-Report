@@ -23,14 +23,4 @@
 @dynamic notes;
 @dynamic videos;
 
--(NSInteger)getNumberOfItems
-{
-    return self.videos.count + self.images.count + self.audios.count + self.notes.count;
-}
-
--(NSOrderedSet*)orderedItems
-{
-    return self.videos;
-}
-
 @end

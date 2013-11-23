@@ -49,6 +49,4 @@
 - (void)removeVideosObject:(Video *)value;
 - (void)addVideos:(NSOrderedSet *)values;
 - (void)removeVideos:(NSOrderedSet *)values;
-
-- (NSInteger)getNumberOfItems;
 @end
