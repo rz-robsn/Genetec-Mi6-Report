@@ -14,13 +14,13 @@
 #import "MI6NotesDataSource.h"
 
 @interface MI6SingleReportViewController ()
-@property (strong,nonatomic) UITextView *textView;
+
 @property (strong,nonatomic) MI6NotesDataSource *datasource;
+
 @end
 
 @implementation MI6SingleReportViewController
 
-@synthesize textView;
 @synthesize report;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,11 +37,9 @@
     [super viewDidLoad];
     
 	// Do any additional setup after loading the view.
+    self.titleTextField.text = report.title;
     
-    if (report == nil)
-    {
-        report = [[[CoreDataHelper instance] entityManager] createNewReport];
-    }
+    self.tapRecognizer.cancelsTouchesInView = NO;
     
     _datasource = [[MI6NotesDataSource alloc] initWithReport:report];
     self.tableView.dataSource = _datasource;
@@ -64,7 +62,18 @@
     [actionSheet showInView:self.view];
 }
 
-- (IBAction)titleTextFieldEditingDidEnd:(id)sender {
+- (IBAction)titleTextFieldEditingDidEnd:(id)sender
+{
+    if (self.titleTextField != nil)
+    {
+        report.title = self.titleTextField.text;
+    }
+}
+
+
+- (IBAction)onViewTapped:(id)sender
+{
+    [self.view endEditing:YES];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -72,17 +81,12 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"New Note" ]) {
-         textView = [[UITextView alloc]initWithFrame:CGRectMake(12, 50, 260, 50)];
-        
-        
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Add Note"
                                                           message:@""
                                                          delegate:self
                                                 cancelButtonTitle:@"Cancel"
                                                 otherButtonTitles:@"Save",nil];
         message.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [message addSubview:textView];
-        
         [message show];
         
     }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo" ]) {
@@ -104,7 +108,6 @@
         media.text = inputText;
         media.type = [NSNumber numberWithInt:MEDIA_TYPE_NOTE];
         [report addMedias:[NSSet setWithObject:media]];
-        [[[CoreDataHelper instance] entityManager] saveContext];
         [_datasource update];
         [[self tableView] reloadData];
     }

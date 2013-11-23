@@ -98,11 +98,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="titleTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="g1R-Qi-OIP"/>
+                                    <action selector="titleTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="lRQ-S3-UcV"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4BM-3K-t4P" appends="YES" id="hgk-wi-FKY"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="dbS-LY-YiO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ut7-jX-F8V"/>
@@ -114,9 +118,16 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="0K8-Qm-Ki3" id="xKG-Sj-mLY"/>
+                        <outlet property="tapRecognizer" destination="4BM-3K-t4P" id="4vb-lB-YYS"/>
+                        <outlet property="titleTextField" destination="Gbe-t5-BpG" id="Sru-o1-VAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4BM-3K-t4P">
+                    <connections>
+                        <action selector="onViewTapped:" destination="vXZ-lx-hvc" id="KMW-at-thq"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="968" y="16"/>
         </scene>

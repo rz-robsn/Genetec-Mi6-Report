@@ -13,6 +13,7 @@
 #import "CoreDataHelper.h"
 #import "MI6ReportsDataSource.h"
 
+
 @interface MI6MainViewController ()
 
 @property (strong,nonatomic) NSDate* date;
@@ -68,6 +69,12 @@ int sendByActionSheet; // when press new note set this to 1;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [datasource update];
+    [self.tableView reloadData];
 }
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -212,14 +219,18 @@ int sendByActionSheet; // when press new note set this to 1;
     
    if([[segue identifier] isEqualToString:@"SingleReportSegue"])
     {
-        if(sendByActionSheet == 1){
-             [ segue.destinationViewController setReport:nil];
-             sendByActionSheet = 0;
-        }else{
+        MI6SingleReportViewController* destVc = (MI6SingleReportViewController*)segue.destinationViewController;
+        
+        if(sendByActionSheet == 1)
+        {
+            Report* report = [[[CoreDataHelper instance] entityManager] createNewReport];
+            [destVc setReport:report];
+            sendByActionSheet = 0;
+        }
+        else
+        {
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            [segue.destinationViewController setReport:[self.datasource.arrayOfReportTitle objectAtIndex:indexPath.row]];
-            
-
+            [destVc setReport:[self.datasource.arrayOfReportTitle objectAtIndex:indexPath.row]];
         }
         
     }

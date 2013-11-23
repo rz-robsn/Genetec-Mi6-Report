@@ -25,6 +25,6 @@
 - (NSArray*)getAllNotesForReport:(Report*)report;
 
 - (Media*)createNewMedia;
-- (Media*)createNewReport;
+- (Report*)createNewReport;
 
 @end
