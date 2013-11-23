@@ -9,6 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+
+#ifndef MEDIA_TYPE_AUDIO
+#define MEDIA_TYPE_AUDIO 0
+#endif
+
+#ifndef MEDIA_TYPE_VIDEO
+#define MEDIA_TYPE_VIDEO 1
+#endif
+
+#ifndef MEDIA_TYPE_IMAGE
+#define MEDIA_TYPE_IMAGE 2
+#endif
+
+#ifndef MEDIA_TYPE_NOTE
+#define MEDIA_TYPE_NOTE 3
+#endif
+
 @class Report;
 
 @interface Media : NSManagedObject

@@ -28,7 +28,7 @@
 {
     if(self = [super init])
     {
-        notes = (report == nil) ? [[[CoreDataHelper instance] entityManager] getAllNotesForReport:report]
+        notes = (report != nil) ? [[[CoreDataHelper instance] entityManager] getAllNotesForReport:report]
                 : [[NSArray alloc] init];
     }
     return self;
@@ -43,8 +43,12 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%li", (long)indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier];
+    }
     
     Media* note = (Media*)[notes objectAtIndex:indexPath.row];
     

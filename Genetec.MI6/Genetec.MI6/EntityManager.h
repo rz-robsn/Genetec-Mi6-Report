@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Report;
+@class Report, Media;
 
 /**
  * This class manages Entities specfied in the DataMobile Core Data Model file.
@@ -23,5 +23,8 @@
 
 - (NSArray*)getAllReports;
 - (NSArray*)getAllNotesForReport:(Report*)report;
+
+- (Media*)createNewMedia;
+- (Media*)createNewReport;
 
 @end

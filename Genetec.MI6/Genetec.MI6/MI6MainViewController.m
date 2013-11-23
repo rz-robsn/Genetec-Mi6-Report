@@ -10,6 +10,8 @@
 #import "MI6SingleReportViewController.h"
 #import "EntityManager.h"
 #import "Report.h"
+#import "CoreDataHelper.h"
+
 @interface MI6MainViewController ()
 
 @property (strong,nonatomic) NSArray* arrayOfReportTitle;
@@ -50,9 +52,7 @@ int sendByActionSheet; // when press new note set this to 1;
 
     //self.date = [NSDate date]
     
-    //self.arrayOfReportTitle = [NSArray arrayWithObjects:@"ab",@"bc",@"cd",@"de",@"fg", nil];
-    self.arrayOfReportTitle = [[[EntityManager alloc]init]getAllReports];
-   // self.dateOfReport = [NSArray arrayWithObjects:parsed.description,parsed.description,parsed.description,parsed.description,parsed.description, nil];
+    self.arrayOfReportTitle = [[[CoreDataHelper instance] entityManager] getAllReports];
     
     self.searchBar.delegate = self;
     self.filteredArray = [NSMutableArray arrayWithCapacity:[self.arrayOfReportTitle count]];
@@ -112,7 +112,6 @@ int sendByActionSheet; // when press new note set this to 1;
     } else {
         return [self.arrayOfReportTitle count];
     }
-    //return [self.arrayOfReportTitle count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -125,21 +124,18 @@ int sendByActionSheet; // when press new note set this to 1;
     // Configure the cell...
     NSString* report;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-       
-       
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+    {
         report = [filteredArray objectAtIndex:indexPath.row];
-    } else {
+    }
+    else
+    {
         Report* re=  (Report*)[self.arrayOfReportTitle objectAtIndex:indexPath.row];
         report = [re title];
     }
-   // NSLog(@"cell");
     cell.textLabel.text = report;
-   // cell.textLabel.backgroundColor = [UIColor clearColor];
-   // self.date = [NSDate date];
-   // cell.detailTextLabel.text = [self.dateOfReport objectAtIndex:indexPath.row];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-//NSLog(@"cell doen");
+
     return cell;
 }
 

@@ -7,14 +7,22 @@
 //
 
 #import "MI6SingleReportViewController.h"
+#import "Media.h"
+#import "Report.h"
+#import "CoreDataHelper.h"
+#import "EntityManager.h"
+#import "MI6NotesDataSource.h"
 
 @interface MI6SingleReportViewController ()
 @property (strong,nonatomic) UITextView *textView;
+@property (strong,nonatomic) MI6NotesDataSource *datasource;
 @end
 
 @implementation MI6SingleReportViewController
 
 @synthesize textView;
+@synthesize report;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,7 +35,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
+    
+    if (report == nil)
+    {
+        report = [[[CoreDataHelper instance] entityManager] createNewReport];
+    }
+    
+    _datasource = [[MI6NotesDataSource alloc] initWithReport:report];
+    self.tableView.dataSource = _datasource;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,8 +73,6 @@
 {
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"New Note" ]) {
          textView = [[UITextView alloc]initWithFrame:CGRectMake(12, 50, 260, 50)];
-        //[textView setText:@"lashdasjh asdasjdas asdlajsdl adsjajadsd aslj daj sdjasdjasjdlasjd as dlasj d"];
-
         
         
         UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Add Note"
@@ -78,19 +94,20 @@
 
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     NSString *inputText = [[alertView textFieldAtIndex:0] text];
-
-    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Save" ]) {
-        if( [inputText length] >= 10 ){
-        
-        }
-       
-        
-        
-        
+    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Save" ])
+    {
+        Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
+        media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
+        media.text = inputText;
+        media.type = [NSNumber numberWithInt:MEDIA_TYPE_NOTE];
+        [report addMedias:[NSSet setWithObject:media]];
+        [[[CoreDataHelper instance] entityManager] saveContext];
+        [[self tableView] reloadData];
     }
-
+    
     
 }
 
