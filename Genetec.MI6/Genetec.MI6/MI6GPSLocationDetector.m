@@ -23,6 +23,7 @@
 @synthesize delegate;
 @synthesize timer;
 @synthesize media;
+@synthesize report;
 
 -(id)init
 {
