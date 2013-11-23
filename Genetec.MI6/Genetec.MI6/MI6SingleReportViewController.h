@@ -10,11 +10,10 @@
 
 @class Report;
 
-@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate, UITableViewDelegate>
+@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate , UIAlertViewDelegate, UITableViewDelegate>
 
+@property (strong, nonatomic) Report* report;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
-@property (strong, nonatomic) Report* report ;
 
 - (IBAction)NewBarButtonItemTapped:(id)sender;
 - (IBAction)titleTextFieldEditingDidEnd:(id)sender;

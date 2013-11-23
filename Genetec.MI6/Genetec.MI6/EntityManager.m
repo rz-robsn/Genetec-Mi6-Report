@@ -78,10 +78,12 @@
                                                      error:&error];
 }
 
-- (NSArray*)getAllNotesForReport:(Report*)report
+- (NSArray*)getAllReports
 {
-    NSFetchRequest *fetchRequest = [self.fetchRequestFactory getAllNotesFetchRequestForReport:report];
-    return [self fetchRequest:fetchRequest];
+    NSError* error;
+     return [self.managedObjectContext executeFetchRequest:[self.fetchRequestFactory getAllObjectsFetchRequest:@"Report"] error:&error];
+
+     
 }
 
 @end
