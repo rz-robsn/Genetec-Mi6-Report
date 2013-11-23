@@ -11,6 +11,8 @@
 @class Media;
 
 @interface MI6DisplayMediaViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) Media* media;
 

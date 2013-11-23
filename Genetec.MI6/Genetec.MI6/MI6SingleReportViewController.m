@@ -7,6 +7,7 @@
 //
 
 #import "MI6SingleReportViewController.h"
+#import "MI6DisplayMediaViewController.h"
 #import "Media.h"
 #import "Report.h"
 #import "CoreDataHelper.h"
@@ -79,14 +80,37 @@
     [self.view endEditing:YES];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"DisplayMediaSegue"])
+    {
+        NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
+        MI6DisplayMediaViewController* destVc = (MI6DisplayMediaViewController*) [segue destinationViewController];
+        destVc.media = [self.datasource.notes objectAtIndex:selectedRowIndexPath.row];
+    }
+}
+
 #pragma mark - UITableViewDelegate
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    Media* media = (Media*)[_datasource.notes objectAtIndex:indexPath.row];
-//    
-//    return [media.type intValue] == MEDIA_TYPE_NOTE ? 20 : 100;
-//}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
+    Media* media = (Media*)[self.datasource.notes objectAtIndex:selectedRowIndexPath.row];
+    if ([media.type intValue] == MEDIA_TYPE_VIDEO)
+    {
+        NSURL* videoUrl = [[NSURL alloc] initFileURLWithPath:media.text];
+        NSData* data = [NSData dataWithContentsOfURL:videoUrl];
+        NSLog(@"%@, %l", videoUrl, [data length]);
+        MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
+        player.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+        [player.moviePlayer prepareToPlay];
+        [self presentViewController:player animated:YES completion:nil];
+    }
+    else
+    {
+        [self performSegueWithIdentifier:@"DisplayMediaSegue" sender:nil];
+    }
+}
 
 #pragma mark - UIActionSheetDelegate
 
@@ -122,6 +146,7 @@
 
     if ([mediaType isEqualToString:@"public.image"]){
         UIImage *imageL = [info objectForKey:UIImagePickerControllerOriginalImage];
+        
         NSData *savedImageData = UIImagePNGRepresentation(imageL);
         media.data = savedImageData;
         media.type = [NSNumber numberWithInt:MEDIA_TYPE_IMAGE];
@@ -129,9 +154,7 @@
         
     }else if([mediaType isEqualToString:@"public.movie"]){
         NSURL *videoUrl =[info objectForKey:UIImagePickerControllerMediaURL];
-        NSString* destinationPath = [[[MI6DocumentDirectoryHelper applicationDocumentsDirectory] path]
-                                     stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",
-                                                                     videoUrl.lastPathComponent, videoUrl.pathExtension]];
+        NSString* destinationPath = [[[MI6DocumentDirectoryHelper applicationDocumentsDirectory] path] stringByAppendingPathComponent:videoUrl.lastPathComponent];
         NSFileManager* manager = [NSFileManager defaultManager];
         NSError* error;
         [manager copyItemAtPath:[videoUrl path] toPath:destinationPath error:&error];

@@ -7,6 +7,7 @@
 //
 
 #import "MI6DisplayMediaViewController.h"
+#import "Media.h"
 
 @interface MI6DisplayMediaViewController ()
 
@@ -30,7 +31,34 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    
+    switch ([media.type intValue]) {
+            
+        case MEDIA_TYPE_NOTE:
+        {
+            self.label.text = [NSString stringWithFormat:@"%@\n\nat %@", media.text, media.timestamp];
+            break;
+        }
+            
+        case MEDIA_TYPE_IMAGE:
+        {
+            self.imageView.image = [UIImage imageWithData:media.data];
+            self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        }    break;
+            
+        case MEDIA_TYPE_AUDIO:
+        {
+            
+        }
+            break;
+            
+        case MEDIA_TYPE_VIDEO:
+        {
+         
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning
