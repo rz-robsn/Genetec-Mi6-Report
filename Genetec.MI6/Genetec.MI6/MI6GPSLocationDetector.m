@@ -60,10 +60,6 @@
     {
         [self.delegate LocationDetector:self didFailToFindCurrentLocationWithError:nil];
     }
-    else
-    {
-        [self.delegate LocationDetector:self didFindCurrentLocation:_latestLocation];
-    }
     
     if (timer)
     {
@@ -78,6 +74,7 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     _latestLocation = [locations objectAtIndex:[locations count]-1];
+    [self.delegate LocationDetector:self didFindCurrentLocation:_latestLocation];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

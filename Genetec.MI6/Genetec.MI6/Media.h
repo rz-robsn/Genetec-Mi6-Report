@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MapKit/MapKit.h>
 
 #ifndef MEDIA_TYPE_AUDIO
 #define MEDIA_TYPE_AUDIO 0
@@ -27,7 +28,7 @@
 
 @class Report;
 
-@interface Media : NSManagedObject
+@interface Media : NSManagedObject <MKAnnotation>
 
 @property (nonatomic, retain) NSData * drawing_data;
 @property (nonatomic, retain) NSNumber * latitude;

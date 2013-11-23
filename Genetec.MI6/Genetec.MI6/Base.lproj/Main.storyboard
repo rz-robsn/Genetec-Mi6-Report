@@ -132,7 +132,7 @@
                         <outlet property="tapRecognizer" destination="4BM-3K-t4P" id="4vb-lB-YYS"/>
                         <outlet property="titleTextField" destination="Gbe-t5-BpG" id="Sru-o1-VAh"/>
                         <segue destination="Evz-Ii-iZ1" kind="push" identifier="DisplayMediaSegue" id="mZr-EJ-eBe"/>
-                        <segue destination="ltz-tB-MAT" kind="push" id="DzW-yj-Hgn"/>
+                        <segue destination="ltz-tB-MAT" kind="push" identifier="MapViewSegue" id="DzW-yj-Hgn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -191,9 +191,18 @@
                     <view key="view" contentMode="scaleToFill" id="YAw-rH-c9R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsR-1k-le1">
+                                <rect key="frame" x="0.0" y="64" width="320" height="461"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="UEZ-AP-6WR"/>
+                    <connections>
+                        <outlet property="mapView" destination="xsR-1k-le1" id="D0g-fI-AbC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMr-rm-mKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

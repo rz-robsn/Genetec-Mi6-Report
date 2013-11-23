@@ -16,6 +16,7 @@
 #import "MI6Image.h"
 #import "MI6DocumentDirectoryHelper.h"
 #import "MI6GPSLocationDetector.h"
+#import "MI6MapViewController.h"
 
 @interface MI6SingleReportViewController ()
 
@@ -85,7 +86,9 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)mapButtonItemTapped:(id)sender {
+- (IBAction)mapButtonItemTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"MapViewSegue" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -95,6 +98,11 @@
         NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
         MI6DisplayMediaViewController* destVc = (MI6DisplayMediaViewController*) [segue destinationViewController];
         destVc.media = [self.datasource.notes objectAtIndex:selectedRowIndexPath.row];
+    }
+    else if([[segue identifier] isEqualToString:@"MapViewSegue"])
+    {
+        MI6MapViewController* destVc = (MI6MapViewController*) [segue destinationViewController];
+        [destVc setReport:self.report];
     }
 }
 
