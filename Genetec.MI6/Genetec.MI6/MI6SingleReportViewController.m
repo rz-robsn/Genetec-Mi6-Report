@@ -13,6 +13,7 @@
 #import "EntityManager.h"
 #import "MI6NotesDataSource.h"
 #import "MI6Image.h"
+#import "MI6DocumentDirectoryHelper.h"
 
 @interface MI6SingleReportViewController ()
 
@@ -44,6 +45,7 @@
     
     _datasource = [[MI6NotesDataSource alloc] initWithReport:report];
     self.tableView.dataSource = _datasource;
+    self.tableView.delegate = self;
     
 }
 
@@ -77,6 +79,15 @@
     [self.view endEditing:YES];
 }
 
+#pragma mark - UITableViewDelegate
+
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    Media* media = (Media*)[_datasource.notes objectAtIndex:indexPath.row];
+//    
+//    return [media.type intValue] == MEDIA_TYPE_NOTE ? 20 : 100;
+//}
+
 #pragma mark - UIActionSheetDelegate
 
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -105,29 +116,40 @@
     
     
     NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
-    // Handle a still image capture
+    
+    Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
+    media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
+
     if ([mediaType isEqualToString:@"public.image"]){
-           NSLog(@"%@",mediaType);
         UIImage *imageL = [info objectForKey:UIImagePickerControllerOriginalImage];
         NSData *savedImageData = UIImagePNGRepresentation(imageL);
-//        Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
-//        media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
-//        media.data = savedImageData;
-//        media.type = [NSNumber numberWithInt:MEDIA_TYPE_IMAGE];
-//        [report addMedias:[NSSet setWithObject:media]];
+        media.data = savedImageData;
+        media.type = [NSNumber numberWithInt:MEDIA_TYPE_IMAGE];
+        [report addMediasObject:media];
         
     }else if([mediaType isEqualToString:@"public.movie"]){
-        NSString *moviePath =  [[info objectForKey:UIImagePickerControllerMediaURL] path];
         NSURL *videoUrl =[info objectForKey:UIImagePickerControllerMediaURL];
-        NSData *savedVideo = [NSData dataWithContentsOfFile:moviePath];
-//        Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
-//        media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
-//        media.data = savedVideo;
-//        media.type = [NSNumber numberWithInt:MEDIA_TYPE_VIDEO];
-//        [report addMedias:[NSSet setWithObject:media]];
+        NSString* destinationPath = [[[MI6DocumentDirectoryHelper applicationDocumentsDirectory] path]
+                                     stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",
+                                                                     videoUrl.lastPathComponent, videoUrl.pathExtension]];
+        NSFileManager* manager = [NSFileManager defaultManager];
+        NSError* error;
+        [manager copyItemAtPath:[videoUrl path] toPath:destinationPath error:&error];
+        
+        media.text = destinationPath ;
+        media.type = [NSNumber numberWithInt:MEDIA_TYPE_VIDEO];
+                      
+        // saving thumbnail.
+        MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:videoUrl];
+        UIImage *thumbnail = [player thumbnailImageAtTime:1.0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+        media.data = UIImagePNGRepresentation(thumbnail);
+        player = nil;
+        
+        [report addMediasObject:media];
     }
+    [[[CoreDataHelper instance] entityManager] saveContext];
     
- 
+    [[self tableView] reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
     // Request to save the image to camera roll
     //  NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(imageL)];

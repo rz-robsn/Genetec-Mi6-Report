@@ -14,7 +14,6 @@
 
 @interface MI6NotesDataSource ()
 
-@property (strong, nonatomic) NSArray* notes;
 
 @end
 
@@ -51,15 +50,67 @@
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%li", (long)indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    Media* media = (Media*)[notes objectAtIndex:indexPath.row];
+    
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier];
+        switch ([media.type intValue]) {
+                
+            case MEDIA_TYPE_NOTE:
+            {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier];
+                break;
+            }
+                
+            case MEDIA_TYPE_IMAGE:
+            {    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
+            }    break;
+                
+            case MEDIA_TYPE_AUDIO:
+            {
+            
+            }
+                break;
+                
+            case MEDIA_TYPE_VIDEO:
+            {
+                cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier];
+            }
+                break;
+            default:
+                break;
+        }
     }
     
-    Media* note = (Media*)[notes objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", note.timestamp];
-    cell.detailTextLabel.text = note.text;
+    switch ([media.type intValue]) {
+            
+        case MEDIA_TYPE_NOTE:
+        {
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", media.timestamp];
+            cell.detailTextLabel.text = media.text;
+        }   break;
+
+        case MEDIA_TYPE_IMAGE:
+        {   UIImage* image = [UIImage imageWithData:media.data];
+            cell.imageView.image = image;
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", media.timestamp];
+        }   break;
+            
+        case MEDIA_TYPE_AUDIO:
+        {
+        
+        }
+            break;
+            
+        case MEDIA_TYPE_VIDEO:
+        {   UIImage* image = [UIImage imageWithData:media.data];
+            cell.imageView.image = image;
+            cell.textLabel.text = [NSString stringWithFormat:@"%@", media.timestamp];
+        }   break;
+            
+        default:
+            break;
+    }
     return cell;
 }
 

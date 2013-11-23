@@ -13,6 +13,7 @@
 @interface MI6NotesDataSource : NSObject <UITableViewDataSource>
 
 @property (strong, nonatomic) Report* report;
+@property (strong, nonatomic) NSArray* notes;
 
 - (MI6NotesDataSource*)initWithReport:(Report*)report;
 

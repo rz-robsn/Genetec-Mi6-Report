@@ -29,7 +29,7 @@
 
 @interface Media : NSManagedObject
 
-@property (nonatomic, retain) NSString * drawing_data;
+@property (nonatomic, retain) NSData * drawing_data;
 @property (nonatomic, retain) NSNumber * latitude;
 @property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) NSString * text;
