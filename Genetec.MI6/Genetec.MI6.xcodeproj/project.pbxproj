@@ -14,6 +14,7 @@
 		3C4270CE18401CA7000DBC2F /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270CD18401CA7000DBC2F /* Note.m */; };
 		3C4270D118401CA7000DBC2F /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D018401CA7000DBC2F /* Report.m */; };
 		3C4270D418401CA7000DBC2F /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D318401CA7000DBC2F /* Agent.m */; };
+		3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */; };
 		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
 		3C54DD071840083A00CE9F15 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD061840083A00CE9F15 /* CoreGraphics.framework */; };
 		3C54DD091840083A00CE9F15 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD081840083A00CE9F15 /* UIKit.framework */; };
@@ -62,6 +63,8 @@
 		3C4270D018401CA7000DBC2F /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Genetec.MI6/Report.m; sourceTree = "<group>"; };
 		3C4270D218401CA7000DBC2F /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agent.h; path = Genetec.MI6/Agent.h; sourceTree = "<group>"; };
 		3C4270D318401CA7000DBC2F /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Agent.m; path = Genetec.MI6/Agent.m; sourceTree = "<group>"; };
+		3C4270D618402A85000DBC2F /* MI6SingleReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6SingleReportViewController.h; sourceTree = "<group>"; };
+		3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6SingleReportViewController.m; sourceTree = "<group>"; };
 		3C54DD011840083A00CE9F15 /* Genetec.MI6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Genetec.MI6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C54DD041840083A00CE9F15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C54DD061840083A00CE9F15 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -234,15 +237,6 @@
 			name = CoreData;
 			sourceTree = "<group>";
 		};
-		D83D486C18400E610072FBCE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				D83D486D18400ED70072FBCE /* MI6MainViewController.h */,
-				D83D486E18400ED70072FBCE /* MI6MainViewController.m */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
 		3CB5713D18400CA7005786D6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +244,17 @@
 				3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D83D486C18400E610072FBCE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D83D486D18400ED70072FBCE /* MI6MainViewController.h */,
+				D83D486E18400ED70072FBCE /* MI6MainViewController.m */,
+				3C4270D618402A85000DBC2F /* MI6SingleReportViewController.h */,
+				3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +369,7 @@
 				3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */,
 				3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */,
 				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
+				3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */,
 				D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */,
 				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,
 			);
