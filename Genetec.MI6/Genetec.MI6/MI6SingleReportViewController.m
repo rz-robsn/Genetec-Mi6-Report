@@ -69,7 +69,7 @@
                                   delegate:self
                                   cancelButtonTitle:@"Cancel"
                                   destructiveButtonTitle:nil
-                                  otherButtonTitles:@"New Note", @"Take Photo", @"Record Video", @"Record Audio", nil];
+                                  otherButtonTitles:@"New Note", @"Take Photo or Video", @"Record Audio", nil];
     [actionSheet showInView:self.view];
 }
 
@@ -137,7 +137,7 @@
                                   delegate:self
                                   cancelButtonTitle:@"Cancel"
                                   destructiveButtonTitle:nil
-                                  otherButtonTitles:@"Print", @"Email", nil];
+                                  otherButtonTitles:@"Print", nil];
     [actionSheet showInView:self.view];
 }
 
@@ -154,7 +154,7 @@
         message.alertViewStyle = UIAlertViewStylePlainTextInput;
         [message show];
         
-    }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo" ]) {
+    }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo or Video" ]) {
         
         
         [[ [MI6Image alloc] init ] startCameraControllerForVedioOrPic:self usingDelegate:self];

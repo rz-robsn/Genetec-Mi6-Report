@@ -52,16 +52,22 @@
     int countY = 0;
     CGFloat heightLabel = (self.scrollView.bounds.size.height / 6);
     for (int i = 0; i < [self.medias count]; ++i) {
-        
+      
         self.media = [self.medias objectAtIndex:i];
         if ( [self.media.type intValue] == MEDIA_TYPE_IMAGE) {
-             imageView = [[UIImageView alloc] initWithImage:(UIImage*)self.media];
-           imagesWidth += imageView.bounds.size.width;
+            UIImage* image =[UIImage imageWithData:self.media.data];
+            imageView = [[UIImageView alloc] initWithImage:image];
+           
+           
+            imageView.frame = CGRectMake(xOriginLabel, yOriginLabel,image.size.width , self.scrollView.bounds.size.height);
+            
+            
+            yOriginLabel = yOriginLabel + self.scrollView.bounds.size.height + 5 ;
             [self.scrollView addSubview:imageView];
+            imagesWidth += imageView.bounds.size.height + 5;
+            
         }else if ([self.media.type intValue ] == MEDIA_TYPE_NOTE){
             xOriginLabel = countX * self.view.bounds.size.width;
-            yOriginLabel = countY * heightLabel;
-            NSLog(@"%f", yOriginLabel);
             label = [[UILabel alloc] initWithFrame:CGRectMake(xOriginLabel,yOriginLabel, self.scrollView.bounds.size.width,60)];// change the size later
             label.numberOfLines = 10;
             [label setFont:[UIFont fontWithName:@"Arial" size:18]];
@@ -75,9 +81,11 @@
             label.text = self.media.text;
            
             [label setText:[NSString stringWithFormat:@"%@ : %@", self.media.timestamp.description, self.media.text]];
-            NSLog(@"%@",label.text);
+           // NSLog(@"%@",label.text);
             [self.scrollView addSubview:label];
-            ++countY;
+            
+            yOriginLabel += heightLabel;
+
         }
         
         
@@ -85,7 +93,7 @@
         
     }
     
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width ,self.scrollView.bounds.size.height + imagesWidth );
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width , yOriginLabel );
 
 }
 

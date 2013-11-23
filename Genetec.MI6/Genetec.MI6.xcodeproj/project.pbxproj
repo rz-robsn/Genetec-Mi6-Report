@@ -17,6 +17,9 @@
 		3C13D0C51840CA2600A83EB6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0C41840CA2600A83EB6 /* MapKit.framework */; };
 		3C13D0C81840CA8F00A83EB6 /* MI6GPSLocationDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0C71840CA8F00A83EB6 /* MI6GPSLocationDetector.m */; };
 		3C13D0CC1840E07700A83EB6 /* MI6MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0CB1840E07700A83EB6 /* MI6MapViewController.m */; };
+		3C13D0D118410AB100A83EB6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0D018410AB100A83EB6 /* Security.framework */; };
+		3C13D0D318410AC200A83EB6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0D218410AC200A83EB6 /* SystemConfiguration.framework */; };
+		3C13DFC61841177400A83EB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13DFC51841177400A83EB6 /* MobileCoreServices.framework */; };
 		3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */; };
 		3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270DB18403861000DBC2F /* MI6NotesDataSource.m */; };
 		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
@@ -72,6 +75,9 @@
 		3C13D0C91840CB8700A83EB6 /* MI6GPSLocationDetectorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MI6GPSLocationDetectorDelegate.h; sourceTree = "<group>"; };
 		3C13D0CA1840E07700A83EB6 /* MI6MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6MapViewController.h; sourceTree = "<group>"; };
 		3C13D0CB1840E07700A83EB6 /* MI6MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6MapViewController.m; sourceTree = "<group>"; };
+		3C13D0D018410AB100A83EB6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3C13D0D218410AC200A83EB6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3C13DFC51841177400A83EB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		3C4270D618402A85000DBC2F /* MI6SingleReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6SingleReportViewController.h; sourceTree = "<group>"; };
 		3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6SingleReportViewController.m; sourceTree = "<group>"; };
 		3C4270DA18403861000DBC2F /* MI6NotesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6NotesDataSource.h; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C13DFC61841177400A83EB6 /* MobileCoreServices.framework in Frameworks */,
+				3C13D0D318410AC200A83EB6 /* SystemConfiguration.framework in Frameworks */,
+				3C13D0D118410AB100A83EB6 /* Security.framework in Frameworks */,
 				3C13D0C51840CA2600A83EB6 /* MapKit.framework in Frameworks */,
 				3C13D0C31840CA0300A83EB6 /* CoreLocation.framework in Frameworks */,
 				3C13D0C11840B40900A83EB6 /* MediaPlayer.framework in Frameworks */,
@@ -186,6 +195,9 @@
 		3C54DD031840083A00CE9F15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C13DFC51841177400A83EB6 /* MobileCoreServices.framework */,
+				3C13D0D218410AC200A83EB6 /* SystemConfiguration.framework */,
+				3C13D0D018410AB100A83EB6 /* Security.framework */,
 				3C13D0C41840CA2600A83EB6 /* MapKit.framework */,
 				3C13D0C21840CA0300A83EB6 /* CoreLocation.framework */,
 				3C13D0C01840B40900A83EB6 /* MediaPlayer.framework */,
@@ -536,6 +548,7 @@
 				GCC_PREFIX_HEADER = "Genetec.MI6/Genetec.MI6-Prefix.pch";
 				INFOPLIST_FILE = "Genetec.MI6/Genetec.MI6-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -548,7 +561,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Genetec.MI6/Genetec.MI6-Prefix.pch";
 				INFOPLIST_FILE = "Genetec.MI6/Genetec.MI6-Info.plist";
+				"OTHER_LDFLAGS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
