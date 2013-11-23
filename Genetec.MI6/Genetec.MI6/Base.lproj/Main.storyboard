@@ -12,16 +12,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="T4f-Xq-sOM">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="X4k-pj-M5n">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="bI9-l0-x5F" id="vbL-2h-kxi"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="OKB-He-ieK" detailTextLabel="7e1-Tq-Ikm" style="IBUITableViewCellStyleSubtitle" id="A9I-aS-fIt">
                                 <rect key="frame" x="0.0" y="163" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A9I-aS-fIt">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A9I-aS-fIt" id="2Il-Qq-dIy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -51,25 +54,18 @@
                     <navigationItem key="navigationItem" id="kL1-CA-2la"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="searchBar" destination="T4f-Xq-sOM" id="cLA-yy-R1U"/>
-                        <outlet property="searchDisplayController" destination="vDr-BL-qHb" id="qfz-jC-4tH"/>
+                        <outlet property="searchBar" destination="X4k-pj-M5n" id="Yu6-35-YGW"/>
+                        <outlet property="searchDisplayController" destination="scQ-Ew-8np" id="cSo-xN-vto"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leH-f4-UAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="5AS-Rl-U2w">
+                <searchDisplayController id="scQ-Ew-8np">
                     <connections>
-                        <outlet property="delegate" destination="bI9-l0-x5F" id="cje-6r-9tw"/>
-                        <outlet property="searchContentsController" destination="bI9-l0-x5F" id="HSJ-4v-9Kr"/>
-                        <outlet property="searchResultsDataSource" destination="bI9-l0-x5F" id="kA7-e6-ghW"/>
-                        <outlet property="searchResultsDelegate" destination="bI9-l0-x5F" id="xos-OX-oZa"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="vDr-BL-qHb">
-                    <connections>
-                        <outlet property="delegate" destination="bI9-l0-x5F" id="uAc-sb-QfJ"/>
-                        <outlet property="searchContentsController" destination="bI9-l0-x5F" id="3bH-wU-lQg"/>
-                        <outlet property="searchResultsDataSource" destination="bI9-l0-x5F" id="ShK-Ow-tkR"/>
-                        <outlet property="searchResultsDelegate" destination="bI9-l0-x5F" id="UBt-Vv-Soi"/>
+                        <outlet property="delegate" destination="bI9-l0-x5F" id="M3F-sk-tR5"/>
+                        <outlet property="searchBar" destination="X4k-pj-M5n" id="9xd-Ki-n2a"/>
+                        <outlet property="searchContentsController" destination="bI9-l0-x5F" id="9TO-rm-3a6"/>
+                        <outlet property="searchResultsDataSource" destination="bI9-l0-x5F" id="fyl-2H-yne"/>
+                        <outlet property="searchResultsDelegate" destination="bI9-l0-x5F" id="16O-uR-ruS"/>
                     </connections>
                 </searchDisplayController>
             </objects>

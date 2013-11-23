@@ -90,20 +90,29 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if ( cell == nil ) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     // Configure the cell...
     NSString* report;
+    UITableView* t = self.searchDisplayController.searchResultsTableView;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
+    if (tableView == t) {
+       
+       
         report = [filteredArray objectAtIndex:indexPath.row];
     } else {
+        
         report = [self.arrayOfReportTitle objectAtIndex:indexPath.row];
     }
+   // NSLog(@"cell");
     cell.textLabel.text = report;
    // cell.textLabel.backgroundColor = [UIColor clearColor];
    // self.date = [NSDate date];
-    cell.detailTextLabel.text = [self.dateOfReport objectAtIndex:indexPath.row];
+   // cell.detailTextLabel.text = [self.dateOfReport objectAtIndex:indexPath.row];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+//NSLog(@"cell doen");
     return cell;
 }
 
@@ -154,12 +163,13 @@
     [self.filteredArray removeAllObjects];
     // Filter the array using NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];
-    NSLog(@"%@ ",searchText);
     filteredArray = [NSMutableArray arrayWithArray:[self.arrayOfReportTitle filteredArrayUsingPredicate:predicate]];
 }
 
+
 #pragma mark - UISearchDisplayController Delegate Methods
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+
     // Tells the table data source to reload when text changes
     [self filterContentForSearchText:searchString scope:
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
@@ -170,6 +180,7 @@
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
     // Tells the table data source to reload when scope bar selection changes
     [self filterContentForSearchText:self.searchDisplayController.searchBar.text scope:
+
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
     // Return YES to cause the search result table view to be reloaded.
     return YES;
