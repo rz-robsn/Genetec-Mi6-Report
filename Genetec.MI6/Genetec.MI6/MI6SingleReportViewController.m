@@ -7,7 +7,6 @@
 //
 
 #import "MI6SingleReportViewController.h"
-#import "MI6NotesDataSource.h"
 
 @interface MI6SingleReportViewController ()
 @property (strong,nonatomic) UITextView *textView;
@@ -29,11 +28,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    _datasource = [[MI6NotesDataSource alloc] initWithReport:report];
-    self.tableView.dataSource = _datasource;
-    self.tableView.delegate = self;
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,9 +46,7 @@
     [actionSheet showInView:self.view];
 }
 
-- (IBAction)titleTextFieldEditingDidEnd:(id)sender
-{
-    
+- (IBAction)titleTextFieldEditingDidEnd:(id)sender {
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -91,7 +83,7 @@
 
     if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Save" ]) {
         if( [inputText length] >= 10 ){
-            NSLog(@"%@", inputText);
+        
         }
        
         

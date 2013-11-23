@@ -22,5 +22,6 @@
 - (void)deleteAllObjects:(NSString *)entityName;
 
 - (NSArray*)getAllReports;
+- (NSArray*)getAllNotesForReport:(Report*)report;
 
 @end
