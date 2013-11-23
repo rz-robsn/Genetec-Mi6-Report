@@ -51,8 +51,6 @@
         [self.mapView addAnnotation:self];
         
     }
-//    _helper = [[MI6LocationToAddressHelper alloc] init];    
-//    [_helper convertToAddress];
     
     for (Media* media in report.medias)
     {
