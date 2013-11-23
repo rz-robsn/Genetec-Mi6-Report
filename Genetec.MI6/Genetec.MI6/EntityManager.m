@@ -8,6 +8,7 @@
 
 #import "EntityManager.h"
 #import "FetchRequestFactory.h"
+#import "Report.h"
 
 @interface EntityManager()
 
@@ -100,8 +101,11 @@
 
 - (Report*)createNewReport
 {
-    return (Report*)[NSEntityDescription insertNewObjectForEntityForName:@"Report"
-                                                  inManagedObjectContext:managedObjectContext];
+    Report* report = (Report*)[NSEntityDescription insertNewObjectForEntityForName:@"Report"
+                                                            inManagedObjectContext:managedObjectContext];
+    report.createdAt = [NSDate dateWithTimeIntervalSinceNow:0];
+    report.updatedAt = [NSDate dateWithTimeIntervalSinceNow:0];
+    return report;
 }
 
 

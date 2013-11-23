@@ -42,9 +42,7 @@
     
     
     
-    // Hides the controls for moving & scaling pictures, or for
-    // trimming movies. To instead show the controls, use YES.
-      cameraUI.allowsEditing = YES;
+    
     
     
     [cameraUI setDelegate:delegate];

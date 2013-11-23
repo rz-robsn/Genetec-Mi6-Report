@@ -120,6 +120,7 @@
                         <outlet property="tableView" destination="0K8-Qm-Ki3" id="xKG-Sj-mLY"/>
                         <outlet property="tapRecognizer" destination="4BM-3K-t4P" id="4vb-lB-YYS"/>
                         <outlet property="titleTextField" destination="Gbe-t5-BpG" id="Sru-o1-VAh"/>
+                        <segue destination="Evz-Ii-iZ1" kind="push" identifier="DisplayMediaSegue" id="mZr-EJ-eBe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -130,6 +131,25 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="968" y="16"/>
+        </scene>
+        <!--Display Media View Controller-->
+        <scene sceneID="KtL-s2-sg6">
+            <objects>
+                <viewController id="Evz-Ii-iZ1" customClass="MI6DisplayMediaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BD2-e0-Gq2"/>
+                        <viewControllerLayoutGuide type="bottom" id="2QW-D9-V3Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wzT-gh-P9h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Dt-IB-ngJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUz-Cu-qxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1409" y="16"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CBS-Qz-I9i">

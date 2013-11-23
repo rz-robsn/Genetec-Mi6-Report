@@ -11,6 +11,7 @@
 		3C13D0AD1840585100A83EB6 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0AC1840585100A83EB6 /* Report.m */; };
 		3C13D0B61840702400A83EB6 /* MI6Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0B51840702400A83EB6 /* MI6Image.m */; };
 		3C13D0BC1840843200A83EB6 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0BB1840843200A83EB6 /* Media.m */; };
+		3C13D0BF18409C6B00A83EB6 /* MI6DisplayMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0BE18409C6B00A83EB6 /* MI6DisplayMediaViewController.m */; };
 		3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */; };
 		3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270DB18403861000DBC2F /* MI6NotesDataSource.m */; };
 		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
@@ -55,6 +56,8 @@
 		3C13D0B51840702400A83EB6 /* MI6Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6Image.m; sourceTree = "<group>"; };
 		3C13D0BA1840843200A83EB6 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Media.h; path = Genetec.MI6/Media.h; sourceTree = "<group>"; };
 		3C13D0BB1840843200A83EB6 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Media.m; path = Genetec.MI6/Media.m; sourceTree = "<group>"; };
+		3C13D0BD18409C6B00A83EB6 /* MI6DisplayMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6DisplayMediaViewController.h; sourceTree = "<group>"; };
+		3C13D0BE18409C6B00A83EB6 /* MI6DisplayMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6DisplayMediaViewController.m; sourceTree = "<group>"; };
 		3C4270D618402A85000DBC2F /* MI6SingleReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6SingleReportViewController.h; sourceTree = "<group>"; };
 		3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6SingleReportViewController.m; sourceTree = "<group>"; };
 		3C4270DA18403861000DBC2F /* MI6NotesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6NotesDataSource.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				3C13D0B51840702400A83EB6 /* MI6Image.m */,
 				3C4270D618402A85000DBC2F /* MI6SingleReportViewController.h */,
 				3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */,
+				3C13D0BD18409C6B00A83EB6 /* MI6DisplayMediaViewController.h */,
+				3C13D0BE18409C6B00A83EB6 /* MI6DisplayMediaViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
 				3C13D0B61840702400A83EB6 /* MI6Image.m in Sources */,
 				3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */,
+				3C13D0BF18409C6B00A83EB6 /* MI6DisplayMediaViewController.m in Sources */,
 				3C13D0AA1840585100A83EB6 /* Agent.m in Sources */,
 				D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */,
 				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,

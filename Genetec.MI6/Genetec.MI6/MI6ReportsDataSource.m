@@ -44,14 +44,12 @@
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%li", (long)indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if ( cell == nil ) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    // Configure the cell...
-    NSString* report;
-    
     Report* re =  (Report*)[self.arrayOfReportTitle objectAtIndex:indexPath.row];
-    cell.textLabel.text = re.title == 0 ? @"Untitled" : re.title;
+    cell.textLabel.text = re.title.length == 0 ? @"Untitled" : re.title;
+    cell.detailTextLabel.text = re.createdAt == nil ? @"" : [NSString stringWithFormat:@"%@", re.createdAt];
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     return cell;
