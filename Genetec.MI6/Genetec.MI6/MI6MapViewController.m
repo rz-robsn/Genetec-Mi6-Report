@@ -46,11 +46,13 @@
             _helper = [[MI6LocationToAddressHelper alloc] init];
             _helper.coordinate = [[CLLocation alloc] initWithLatitude:[report.latitude doubleValue]
                                                             longitude:[report.longitude doubleValue]];
+            _helper.delegate = self;
             [_helper convertToAddress];
         }
         [self.mapView addAnnotation:self];
         
     }
+    
     
     for (Media* media in report.medias)
     {
@@ -60,6 +62,7 @@
             [self.mapView addAnnotation:media];
         }
     }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,6 +107,8 @@
 -(void)locationToAddressHelper:(MI6LocationToAddressHelper*)helper didFinishWithAddress:(NSString*) address
 {
     report.address = address;
+    [self.mapView removeAnnotation:self];
+    [self.mapView addAnnotation:self];
 }
 
 -(void)locationToAddressHelperdidFailToGetAddress:(MI6LocationToAddressHelper*)helper

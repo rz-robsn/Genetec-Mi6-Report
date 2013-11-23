@@ -143,7 +143,6 @@ int sendByActionSheet; // when press new note set this to 1;
     media.data = savedImageData;
     media.type = [NSNumber numberWithInt:MEDIA_TYPE_IMAGE];
     [reportWithImage addMedias:[NSSet setWithObject:media]];
-    [[[CoreDataHelper instance] entityManager] saveContext];
     
     detector.media = media;
     detector.report = reportWithImage;

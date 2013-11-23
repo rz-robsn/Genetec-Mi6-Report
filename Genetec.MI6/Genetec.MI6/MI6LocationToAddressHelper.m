@@ -76,8 +76,7 @@
     }
     else
     {
-        NSString* streetName = (NSString*)[[[responseObject valueForKey:@"results"] valueForKey:@"locations"] valueForKey:@"street"];
-        NSLog(@"%@", responseObject);
+        NSString* streetName = [[[[[responseObject valueForKey:@"results"] valueForKey:@"locations"] valueForKey:@"street"] objectAtIndex:0] objectAtIndex:0];
         [self.delegate locationToAddressHelper:self didFinishWithAddress:streetName];
     }
     

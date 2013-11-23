@@ -206,7 +206,6 @@
         
         [report addMediasObject:media];
     }
-    [[[CoreDataHelper instance] entityManager] saveContext];
     
     detector.media = media;
     [detector startFetchingCurrentLocation];
