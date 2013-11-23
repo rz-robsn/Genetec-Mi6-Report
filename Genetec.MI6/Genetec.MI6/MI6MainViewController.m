@@ -14,19 +14,23 @@
 #import "MI6ReportsDataSource.h"
 #import "MI6Image.h"
 #import "Media.h"
+#import "MI6GPSLocationDetector.h"
 
 @interface MI6MainViewController ()
 
 @property (strong,nonatomic) NSDate* date;
 @property (strong,nonatomic) NSMutableArray* filteredArray;
 @property (strong,nonatomic) MI6ReportsDataSource* datasource;
+@property (strong, nonatomic) MI6GPSLocationDetector* detector;
 
 @end
 
 @implementation MI6MainViewController
+
 Report* reportWithImage;
 @synthesize filteredArray;
 @synthesize datasource;
+@synthesize detector;
 
 int sendByActionSheet; // when press new note set this to 1;
 
@@ -55,8 +59,17 @@ int sendByActionSheet; // when press new note set this to 1;
     datasource = [[MI6ReportsDataSource alloc] init];
     self.tableView.dataSource = datasource;
     
+    self.detector = [[MI6GPSLocationDetector alloc] init];
+    self.detector.delegate = self;
+    
+    
     self.searchBar.delegate = self;
     self.filteredArray = [NSMutableArray arrayWithCapacity:[self.datasource.arrayOfReportTitle count]];
+    
+    UIBarButtonItem *changeCategory = [[UIBarButtonItem alloc] initWithTitle:@"Map"
+                                                                       style:UIBarButtonItemStyleBordered
+                                                                      target:self
+                                                                      action:@selector(mapBarButtonItemTapped:)];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -75,6 +88,11 @@ int sendByActionSheet; // when press new note set this to 1;
 {
     [datasource update];
     [self.tableView reloadData];
+}
+
+-(void)mapBarButtonItemTapped
+{
+
 }
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -100,7 +118,6 @@ int sendByActionSheet; // when press new note set this to 1;
         [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
         
     }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo" ]) {
-        
         [[ [MI6Image alloc] init ] startCameraControllerFromViewController:self usingDelegate:self];
     }
 }
@@ -125,6 +142,11 @@ int sendByActionSheet; // when press new note set this to 1;
     media.data = savedImageData;
     media.type = [NSNumber numberWithInt:MEDIA_TYPE_IMAGE];
     [reportWithImage addMedias:[NSSet setWithObject:media]];
+    [[[CoreDataHelper instance] entityManager] saveContext];
+    
+    detector.media = media;
+    [detector startFetchingCurrentLocation];
+    sendByActionSheet = 1;
     [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
     
 }
@@ -268,6 +290,19 @@ int sendByActionSheet; // when press new note set this to 1;
         }
         
     }
+}
+
+#pragma mark - MI6GPSLocationDetectorDelegate
+
+-(void)LocationDetector:(MI6GPSLocationDetector *)locationDetector didFindCurrentLocation:(CLLocation *)location
+{
+    locationDetector.media.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
+    locationDetector.media.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+}
+
+-(void)LocationDetector:(MI6GPSLocationDetector *)locationDetector didFailToFindCurrentLocationWithError:(NSError *)error
+{
+    
 }
 
 

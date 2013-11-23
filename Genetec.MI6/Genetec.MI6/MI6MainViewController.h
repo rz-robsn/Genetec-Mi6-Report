@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MI6GPSLocationDetectorDelegate.h"
+
 @interface MI6MainViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate,
-UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MI6GPSLocationDetectorDelegate>
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+
+-(void)mapBarButtonItemTapped;
 
 @end

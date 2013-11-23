@@ -85,6 +85,9 @@
     [self.view endEditing:YES];
 }
 
+- (IBAction)mapButtonItemTapped:(id)sender {
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"DisplayMediaSegue"])
@@ -106,7 +109,6 @@
         // Play video
         NSURL* videoUrl = [[NSURL alloc] initFileURLWithPath:media.text];
         NSData* data = [NSData dataWithContentsOfURL:videoUrl];
-        NSLog(@"%@, %l", videoUrl, [data length]);
         MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:videoUrl];
         player.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
         [player.moviePlayer prepareToPlay];
@@ -148,7 +150,8 @@
     NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
     
     Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
-    media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
+    NSDate* now = [NSDate dateWithTimeIntervalSinceNow:0];
+    media.timestamp = now;
 
     if ([mediaType isEqualToString:@"public.image"]){
         UIImage *imageL = [info objectForKey:UIImagePickerControllerOriginalImage];
@@ -160,7 +163,8 @@
         
     }else if([mediaType isEqualToString:@"public.movie"]){
         NSURL *videoUrl =[info objectForKey:UIImagePickerControllerMediaURL];
-        NSString* destinationPath = [[[MI6DocumentDirectoryHelper applicationDocumentsDirectory] path] stringByAppendingPathComponent:videoUrl.lastPathComponent];
+        NSString* destinationPath = [[[MI6DocumentDirectoryHelper applicationDocumentsDirectory] path]
+                                     stringByAppendingPathComponent:[NSString stringWithFormat:@"capture-%f", [now timeIntervalSinceReferenceDate]]];
         NSFileManager* manager = [NSFileManager defaultManager];
         NSError* error;
         [manager copyItemAtPath:[videoUrl path] toPath:destinationPath error:&error];

@@ -88,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0K8-Qm-Ki3">
-                                <rect key="frame" x="0.0" y="128" width="320" height="420"/>
+                                <rect key="frame" x="0.0" y="128" width="320" height="307"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -101,6 +101,17 @@
                                     <action selector="titleTextFieldEditingDidEnd:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="lRQ-S3-UcV"/>
                                 </connections>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Kg-mF-Js8">
+                                <rect key="frame" x="0.0" y="435" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Map" id="qOT-1K-R6s">
+                                        <connections>
+                                            <action selector="mapButtonItemTapped:" destination="vXZ-lx-hvc" id="NPv-z8-jGS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -110,7 +121,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dbS-LY-YiO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ut7-jX-F8V"/>
-                        <barButtonItem key="rightBarButtonItem" title="New" id="3TT-Qc-Tlb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3TT-Qc-Tlb">
                             <connections>
                                 <action selector="NewBarButtonItemTapped:" destination="vXZ-lx-hvc" id="fRg-Xh-9HD"/>
                             </connections>
@@ -121,6 +132,7 @@
                         <outlet property="tapRecognizer" destination="4BM-3K-t4P" id="4vb-lB-YYS"/>
                         <outlet property="titleTextField" destination="Gbe-t5-BpG" id="Sru-o1-VAh"/>
                         <segue destination="Evz-Ii-iZ1" kind="push" identifier="DisplayMediaSegue" id="mZr-EJ-eBe"/>
+                        <segue destination="ltz-tB-MAT" kind="push" id="DzW-yj-Hgn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -167,6 +179,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kUz-Cu-qxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1409" y="16"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="bD8-h8-sgf">
+            <objects>
+                <viewController id="ltz-tB-MAT" customClass="MI6MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TH9-80-mB3"/>
+                        <viewControllerLayoutGuide type="bottom" id="caf-XY-8Cd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YAw-rH-c9R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UEZ-AP-6WR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMr-rm-mKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1409" y="699"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CBS-Qz-I9i">
