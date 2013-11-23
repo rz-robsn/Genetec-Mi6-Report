@@ -9,9 +9,13 @@
 #import "MI6MapViewController.h"
 #import "Media.h"
 #import "Report.h"
+#import "MI6PrintViewController.h"
+#import "MI6LocationToAddressHelper.h"
 
 @interface MI6MapViewController ()
-
+{
+    MI6LocationToAddressHelper* _helper;
+}
 @end
 
 @implementation MI6MapViewController
@@ -33,6 +37,22 @@
     
 	// Do any additional setup after loading the view.
     self.mapView.delegate = self;
+        
+    if(report.latitude != nil && [report.latitude intValue] != 0
+       && report.longitude != nil && [report.longitude intValue] != 0)
+    {
+        if(report.address == nil || report.address.length == 0)
+        {
+            _helper = [[MI6LocationToAddressHelper alloc] init];
+            _helper.coordinate = [[CLLocation alloc] initWithLatitude:[report.latitude doubleValue]
+                                                            longitude:[report.longitude doubleValue]];
+            [_helper convertToAddress];
+        }
+        [self.mapView addAnnotation:self];
+        
+    }
+//    _helper = [[MI6LocationToAddressHelper alloc] init];    
+//    [_helper convertToAddress];
     
     for (Media* media in report.medias)
     {
@@ -81,5 +101,43 @@
     
 }
 
+#pragma mark - MI6LocationToAddressDelegate
+
+-(void)locationToAddressHelper:(MI6LocationToAddressHelper*)helper didFinishWithAddress:(NSString*) address
+{
+    report.address = address;
+}
+
+-(void)locationToAddressHelperdidFailToGetAddress:(MI6LocationToAddressHelper*)helper
+{
+
+}
+
+#pragma mark - MKAnnotation
+
+-(NSString *)title
+{
+    if(report.address != nil && report.address.length > 0)
+    {
+        return report.address;
+    }
+    else
+    {
+        return @"User";
+    }
+}
+
+-(CLLocationCoordinate2D)coordinate
+{
+    if(report.latitude != nil && [report.latitude intValue] != 0
+       && report.longitude != nil && [report.longitude intValue] != 0)
+    {
+        return CLLocationCoordinate2DMake([report.latitude doubleValue], [report.longitude doubleValue]);
+    }
+    else
+    {
+        return CLLocationCoordinate2DMake(0,0);
+    }
+}
 
 @end

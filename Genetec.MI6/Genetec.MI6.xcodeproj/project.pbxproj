@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3C13D0AA1840585100A83EB6 /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0A91840585100A83EB6 /* Agent.m */; };
-		3C13D0AD1840585100A83EB6 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0AC1840585100A83EB6 /* Report.m */; };
 		3C13D0B61840702400A83EB6 /* MI6Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0B51840702400A83EB6 /* MI6Image.m */; };
 		3C13D0BC1840843200A83EB6 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0BB1840843200A83EB6 /* Media.m */; };
 		3C13D0BF18409C6B00A83EB6 /* MI6DisplayMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0BE18409C6B00A83EB6 /* MI6DisplayMediaViewController.m */; };
@@ -43,6 +42,11 @@
 		D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83D486E18400ED70072FBCE /* MI6MainViewController.m */; };
 		D866B4EA1840747400F2C2BE /* MI6ReportsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4E91840747400F2C2BE /* MI6ReportsDataSource.m */; };
 		D866B4ED1840EA0E00F2C2BE /* MI6PrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4EC1840EA0E00F2C2BE /* MI6PrintViewController.m */; };
+		D866B4F018410A5700F2C2BE /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4EF18410A5700F2C2BE /* Report.m */; };
+		D866B4F318410EDD00F2C2BE /* MI6LocationToAddressHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4F218410EDD00F2C2BE /* MI6LocationToAddressHelper.m */; };
+		D866B4FD184119E800F2C2BE /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4F7184119E800F2C2BE /* CJSONDeserializer.m */; };
+		D866B4FE184119E800F2C2BE /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4F9184119E800F2C2BE /* CJSONSerializer.m */; };
+		D866B4FF184119E800F2C2BE /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4FC184119E800F2C2BE /* NSDictionary_JSONExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +62,6 @@
 /* Begin PBXFileReference section */
 		3C13D0A81840585100A83EB6 /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agent.h; path = Genetec.MI6/Agent.h; sourceTree = "<group>"; };
 		3C13D0A91840585100A83EB6 /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Agent.m; path = Genetec.MI6/Agent.m; sourceTree = "<group>"; };
-		3C13D0AB1840585100A83EB6 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Report.h; path = Genetec.MI6/Report.h; sourceTree = "<group>"; };
-		3C13D0AC1840585100A83EB6 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Genetec.MI6/Report.m; sourceTree = "<group>"; };
 		3C13D0B41840702400A83EB6 /* MI6Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6Image.h; sourceTree = "<group>"; };
 		3C13D0B51840702400A83EB6 /* MI6Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6Image.m; sourceTree = "<group>"; };
 		3C13D0BA1840843200A83EB6 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Media.h; path = Genetec.MI6/Media.h; sourceTree = "<group>"; };
@@ -114,6 +116,18 @@
 		D866B4E91840747400F2C2BE /* MI6ReportsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6ReportsDataSource.m; sourceTree = "<group>"; };
 		D866B4EB1840EA0E00F2C2BE /* MI6PrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6PrintViewController.h; sourceTree = "<group>"; };
 		D866B4EC1840EA0E00F2C2BE /* MI6PrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6PrintViewController.m; sourceTree = "<group>"; };
+		D866B4EE18410A5700F2C2BE /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Report.h; path = Genetec.MI6/Report.h; sourceTree = "<group>"; };
+		D866B4EF18410A5700F2C2BE /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Genetec.MI6/Report.m; sourceTree = "<group>"; };
+		D866B4F118410EDD00F2C2BE /* MI6LocationToAddressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6LocationToAddressHelper.h; sourceTree = "<group>"; };
+		D866B4F218410EDD00F2C2BE /* MI6LocationToAddressHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6LocationToAddressHelper.m; sourceTree = "<group>"; };
+		D866B4F418410F6C00F2C2BE /* MI6LocationToAddressDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MI6LocationToAddressDelegate.h; sourceTree = "<group>"; };
+		D866B4F6184119E800F2C2BE /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		D866B4F7184119E800F2C2BE /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		D866B4F8184119E800F2C2BE /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		D866B4F9184119E800F2C2BE /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		D866B4FA184119E800F2C2BE /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		D866B4FB184119E800F2C2BE /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		D866B4FC184119E800F2C2BE /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +163,10 @@
 		3C4270D518401CB3000DBC2F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D866B4EE18410A5700F2C2BE /* Report.h */,
+				D866B4EF18410A5700F2C2BE /* Report.m */,
 				3C13D0BA1840843200A83EB6 /* Media.h */,
 				3C13D0BB1840843200A83EB6 /* Media.m */,
-				3C13D0AB1840585100A83EB6 /* Report.h */,
-				3C13D0AC1840585100A83EB6 /* Report.m */,
 				3C13D0A81840585100A83EB6 /* Agent.h */,
 				3C13D0A91840585100A83EB6 /* Agent.m */,
 			);
@@ -271,11 +285,15 @@
 		3CB5713D18400CA7005786D6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D866B4F5184119E800F2C2BE /* TouchJSON */,
 				3CB5713E18400CB5005786D6 /* MI6DocumentDirectoryHelper.h */,
 				3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */,
 				3C13D0C61840CA8F00A83EB6 /* MI6GPSLocationDetector.h */,
 				3C13D0C71840CA8F00A83EB6 /* MI6GPSLocationDetector.m */,
 				3C13D0C91840CB8700A83EB6 /* MI6GPSLocationDetectorDelegate.h */,
+				D866B4F118410EDD00F2C2BE /* MI6LocationToAddressHelper.h */,
+				D866B4F218410EDD00F2C2BE /* MI6LocationToAddressHelper.m */,
+				D866B4F418410F6C00F2C2BE /* MI6LocationToAddressDelegate.h */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -297,6 +315,21 @@
 				3C13D0CB1840E07700A83EB6 /* MI6MapViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D866B4F5184119E800F2C2BE /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				D866B4F6184119E800F2C2BE /* CJSONDeserializer.h */,
+				D866B4F7184119E800F2C2BE /* CJSONDeserializer.m */,
+				D866B4F8184119E800F2C2BE /* CJSONSerializer.h */,
+				D866B4F9184119E800F2C2BE /* CJSONSerializer.m */,
+				D866B4FA184119E800F2C2BE /* JSONRepresentation.h */,
+				D866B4FB184119E800F2C2BE /* NSDictionary_JSONExtensions.h */,
+				D866B4FC184119E800F2C2BE /* NSDictionary_JSONExtensions.m */,
+			);
+			name = TouchJSON;
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +431,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D866B4FF184119E800F2C2BE /* NSDictionary_JSONExtensions.m in Sources */,
+				D866B4FD184119E800F2C2BE /* CJSONDeserializer.m in Sources */,
+				D866B4FE184119E800F2C2BE /* CJSONSerializer.m in Sources */,
 				3CB5713B18400A5A005786D6 /* EntityManager.m in Sources */,
 				3CB5713A18400A5A005786D6 /* FetchRequestFactory.m in Sources */,
 				3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */,
@@ -407,6 +443,7 @@
 				3C13D0BC1840843200A83EB6 /* Media.m in Sources */,
 				3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */,
 				D866B4ED1840EA0E00F2C2BE /* MI6PrintViewController.m in Sources */,
+				D866B4F318410EDD00F2C2BE /* MI6LocationToAddressHelper.m in Sources */,
 				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
 				3C13D0B61840702400A83EB6 /* MI6Image.m in Sources */,
 				3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */,
@@ -414,9 +451,9 @@
 				3C13D0C81840CA8F00A83EB6 /* MI6GPSLocationDetector.m in Sources */,
 				3C13D0AA1840585100A83EB6 /* Agent.m in Sources */,
 				3C13D0CC1840E07700A83EB6 /* MI6MapViewController.m in Sources */,
+				D866B4F018410A5700F2C2BE /* Report.m in Sources */,
 				D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */,
 				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,
-				3C13D0AD1840585100A83EB6 /* Report.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

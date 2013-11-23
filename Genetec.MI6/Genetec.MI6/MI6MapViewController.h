@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "MI6LocationToAddressDelegate.h"
 
 @class Report;
 
-@interface MI6MapViewController : UIViewController <MKMapViewDelegate>
+@interface MI6MapViewController : UIViewController <MKMapViewDelegate, MI6LocationToAddressDelegate, MKAnnotation>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
