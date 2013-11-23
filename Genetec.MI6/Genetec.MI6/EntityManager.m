@@ -78,4 +78,12 @@
                                                      error:&error];
 }
 
+- (NSArray*)getAllReports
+{
+    NSError* error;
+     return [self.managedObjectContext executeFetchRequest:[self.fetchRequestFactory getAllObjectsFetchRequest:@"Report"] error:&error];
+
+     
+}
+
 @end
