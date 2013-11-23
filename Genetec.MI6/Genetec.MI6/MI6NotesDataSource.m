@@ -30,8 +30,14 @@
     {
         notes = (report != nil) ? [[[CoreDataHelper instance] entityManager] getAllNotesForReport:report]
                 : [[NSArray alloc] init];
+        self.report = report;
     }
     return self;
+}
+
+- (void)update
+{
+    notes = [[[CoreDataHelper instance] entityManager] getAllNotesForReport:report];
 }
 
 #pragma mark - UITableViewDataSource

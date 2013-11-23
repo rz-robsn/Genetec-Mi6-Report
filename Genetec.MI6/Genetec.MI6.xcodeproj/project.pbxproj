@@ -19,7 +19,6 @@
 		3C54DD111840083A00CE9F15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD101840083A00CE9F15 /* main.m */; };
 		3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */; };
 		3C54DD181840083A00CE9F15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD161840083A00CE9F15 /* Main.storyboard */; };
-		3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C54DD1A1840083A00CE9F15 /* MI6ViewController.m */; };
 		3C54DD1D1840083A00CE9F15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C54DD1C1840083A00CE9F15 /* Images.xcassets */; };
 		3C54DD241840083A00CE9F15 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD231840083A00CE9F15 /* XCTest.framework */; };
 		3C54DD251840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
@@ -33,6 +32,7 @@
 		3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */; };
 		3CB571431840111C005786D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CB571411840111C005786D6 /* Model.xcdatamodeld */; };
 		D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83D486E18400ED70072FBCE /* MI6MainViewController.m */; };
+		D866B4EA1840747400F2C2BE /* MI6ReportsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4E91840747400F2C2BE /* MI6ReportsDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +67,6 @@
 		3C54DD131840083A00CE9F15 /* MI6AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MI6AppDelegate.h; sourceTree = "<group>"; };
 		3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MI6AppDelegate.m; sourceTree = "<group>"; };
 		3C54DD171840083A00CE9F15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3C54DD191840083A00CE9F15 /* MI6ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MI6ViewController.h; sourceTree = "<group>"; };
-		3C54DD1A1840083A00CE9F15 /* MI6ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MI6ViewController.m; sourceTree = "<group>"; };
 		3C54DD1C1840083A00CE9F15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3C54DD221840083A00CE9F15 /* Genetec.MI6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Genetec.MI6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C54DD231840083A00CE9F15 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -87,6 +85,8 @@
 		3CB571421840111C005786D6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D83D486D18400ED70072FBCE /* MI6MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6MainViewController.h; sourceTree = "<group>"; };
 		D83D486E18400ED70072FBCE /* MI6MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6MainViewController.m; sourceTree = "<group>"; };
+		D866B4E81840747400F2C2BE /* MI6ReportsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6ReportsDataSource.h; sourceTree = "<group>"; };
+		D866B4E91840747400F2C2BE /* MI6ReportsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6ReportsDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +133,8 @@
 			children = (
 				3C4270DA18403861000DBC2F /* MI6NotesDataSource.h */,
 				3C4270DB18403861000DBC2F /* MI6NotesDataSource.m */,
+				D866B4E81840747400F2C2BE /* MI6ReportsDataSource.h */,
+				D866B4E91840747400F2C2BE /* MI6ReportsDataSource.m */,
 			);
 			name = ViewDataSource;
 			sourceTree = "<group>";
@@ -178,8 +180,6 @@
 				3C54DD131840083A00CE9F15 /* MI6AppDelegate.h */,
 				3C54DD141840083A00CE9F15 /* MI6AppDelegate.m */,
 				3C54DD161840083A00CE9F15 /* Main.storyboard */,
-				3C54DD191840083A00CE9F15 /* MI6ViewController.h */,
-				3C54DD1A1840083A00CE9F15 /* MI6ViewController.m */,
 				3C54DD1C1840083A00CE9F15 /* Images.xcassets */,
 				3C54DD0B1840083A00CE9F15 /* Supporting Files */,
 				3CB571411840111C005786D6 /* Model.xcdatamodeld */,
@@ -353,7 +353,7 @@
 				3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */,
 				3C54DD111840083A00CE9F15 /* main.m in Sources */,
 				3CB571431840111C005786D6 /* Model.xcdatamodeld in Sources */,
-				3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */,
+				D866B4EA1840747400F2C2BE /* MI6ReportsDataSource.m in Sources */,
 				3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */,
 				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
 				3C13D0B01840585100A83EB6 /* Media.m in Sources */,

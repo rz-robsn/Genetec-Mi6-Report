@@ -105,6 +105,7 @@
         media.type = [NSNumber numberWithInt:MEDIA_TYPE_NOTE];
         [report addMedias:[NSSet setWithObject:media]];
         [[[CoreDataHelper instance] entityManager] saveContext];
+        [_datasource update];
         [[self tableView] reloadData];
     }
     
