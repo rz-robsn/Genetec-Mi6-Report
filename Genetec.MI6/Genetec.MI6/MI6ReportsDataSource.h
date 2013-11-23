@@ -10,4 +10,8 @@
 
 @interface MI6ReportsDataSource : NSObject <UITableViewDataSource>
 
+@property (strong,nonatomic) NSArray* arrayOfReportTitle;
+
+- (void)update;
+
 @end

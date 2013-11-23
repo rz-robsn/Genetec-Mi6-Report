@@ -11,13 +11,13 @@
 #import "EntityManager.h"
 #import "Report.h"
 #import "CoreDataHelper.h"
+#import "MI6ReportsDataSource.h"
 
 @interface MI6MainViewController ()
 
-@property (strong,nonatomic) NSArray* arrayOfReportTitle;
-@property (strong,nonatomic) NSArray* dateOfReport;
 @property (strong,nonatomic) NSDate* date;
 @property (strong,nonatomic) NSMutableArray* filteredArray;
+@property (strong,nonatomic) MI6ReportsDataSource* datasource;
 
 
 @end
@@ -25,6 +25,7 @@
 @implementation MI6MainViewController
 
 @synthesize filteredArray;
+@synthesize datasource;
 
 int sendByActionSheet; // when press new note set this to 1;
 
@@ -49,16 +50,13 @@ int sendByActionSheet; // when press new note set this to 1;
     NSString *dateString = [inFormat stringFromDate:now];
     
     NSDate *parsed = [inFormat dateFromString:dateString];
-
-    //self.date = [NSDate date]
     
-    self.arrayOfReportTitle = [[[CoreDataHelper instance] entityManager] getAllReports];
+    datasource = [[MI6ReportsDataSource alloc] init];
+    self.tableView.dataSource = datasource;
     
     self.searchBar.delegate = self;
-    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.arrayOfReportTitle count]];
-    [self.tableView reloadData];
+    self.filteredArray = [NSMutableArray arrayWithCapacity:[self.datasource.arrayOfReportTitle count]];
     
-       [self.tableView reloadData];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -71,8 +69,6 @@ int sendByActionSheet; // when press new note set this to 1;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
@@ -89,6 +85,7 @@ int sendByActionSheet; // when press new note set this to 1;
                                   otherButtonTitles:@"New Report", @"Take Photo", nil];
     [actionSheet showInView:self.view];
 }
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     
     if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"New Report" ]) {
@@ -97,21 +94,17 @@ int sendByActionSheet; // when press new note set this to 1;
         
     }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo" ]) {
         // Lazily allocate image picker controller
-        
-        
-          
-        
     }
     
 }
+
+
+#pragma mark - Table view data source
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [filteredArray count];
-    } else {
-        return [self.arrayOfReportTitle count];
-    }
+    return [filteredArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,18 +114,11 @@ int sendByActionSheet; // when press new note set this to 1;
     if ( cell == nil ) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
     // Configure the cell...
     NSString* report;
     
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-    {
-        report = [filteredArray objectAtIndex:indexPath.row];
-    }
-    else
-    {
-        Report* re=  (Report*)[self.arrayOfReportTitle objectAtIndex:indexPath.row];
-        report = [re title];
-    }
+    report = [filteredArray objectAtIndex:indexPath.row];
     cell.textLabel.text = report;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
 
@@ -194,7 +180,7 @@ int sendByActionSheet; // when press new note set this to 1;
     [self.filteredArray removeAllObjects];
     // Filter the array using NSPredicate
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];
-    filteredArray = [NSMutableArray arrayWithArray:[self.arrayOfReportTitle filteredArrayUsingPredicate:predicate]];
+    filteredArray = [NSMutableArray arrayWithArray:[self.datasource.arrayOfReportTitle filteredArrayUsingPredicate:predicate]];
 }
 
 
@@ -231,8 +217,7 @@ int sendByActionSheet; // when press new note set this to 1;
              sendByActionSheet = 0;
         }else{
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            NSLog(@"%d", indexPath.row);
-            [ segue.destinationViewController setReport:[self.arrayOfReportTitle objectAtIndex:indexPath.row]];
+            [segue.destinationViewController setReport:[self.datasource.arrayOfReportTitle objectAtIndex:indexPath.row]];
             
 
         }
