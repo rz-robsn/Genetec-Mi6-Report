@@ -19,7 +19,6 @@
 		3C13D0CC1840E07700A83EB6 /* MI6MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0CB1840E07700A83EB6 /* MI6MapViewController.m */; };
 		3C13D0D118410AB100A83EB6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0D018410AB100A83EB6 /* Security.framework */; };
 		3C13D0D318410AC200A83EB6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13D0D218410AC200A83EB6 /* SystemConfiguration.framework */; };
-		3C13DFC61841177400A83EB6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C13DFC51841177400A83EB6 /* MobileCoreServices.framework */; };
 		3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */; };
 		3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270DB18403861000DBC2F /* MI6NotesDataSource.m */; };
 		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
@@ -122,7 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C13DFC61841177400A83EB6 /* MobileCoreServices.framework in Frameworks */,
 				3C13D0D318410AC200A83EB6 /* SystemConfiguration.framework in Frameworks */,
 				3C13D0D118410AB100A83EB6 /* Security.framework in Frameworks */,
 				3C13D0C51840CA2600A83EB6 /* MapKit.framework in Frameworks */,
@@ -361,6 +359,7 @@
 			knownRegions = (
 				en,
 				Base,
+				English,
 			);
 			mainGroup = 3C54DCF81840083A00CE9F15;
 			productRefGroup = 3C54DD021840083A00CE9F15 /* Products */;
