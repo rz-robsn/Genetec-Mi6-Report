@@ -22,7 +22,15 @@
 -(void)convertToAddress
 {
     // Create the request.
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.mapquestapi.com/geocoding/v1/reverse?key=Fmjtd%7Cluubn90bnl%2C22%3Do5-902g9f&callback=renderReverse&location=40.0755,-76.329999"]];
+    NSString* coordinateString = [NSString stringWithFormat:@"%f,%f",
+                                 coordinate.coordinate.latitude,
+                                 coordinate.coordinate.longitude];
+    NSString* requestString = @"http://www.mapquestapi.com/geocoding/v1/reverse?key=Fmjtd%7Cluubn90bnl%2C22%3Do5-902g9f&callback=renderReverse&location=";
+    
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",
+                                                                                requestString,
+                                                                                coordinateString]]];
     
     // Create url connection and fire request
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -52,8 +60,14 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
+    
     NSError *error ;
-    id responseObject = [[CJSONDeserializer deserializer] deserialize:_responseData error:&error];
+    NSString* responseString = [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
+    NSString* jsonString = [responseString substringWithRange:NSMakeRange(14, responseString.length - 14 - 2)];
+    
+    NSDictionary* responseObject = [[CJSONDeserializer deserializer] deserializeAsDictionary:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
+                                            error:&error];
+    
     
     if (error)
     {
@@ -62,7 +76,9 @@
     }
     else
     {
-        // success
+        NSString* streetName = (NSString*)[[[responseObject valueForKey:@"results"] valueForKey:@"locations"] valueForKey:@"street"];
+        NSLog(@"%@", responseObject);
+        [self.delegate locationToAddressHelper:self didFinishWithAddress:streetName];
     }
     
 }
