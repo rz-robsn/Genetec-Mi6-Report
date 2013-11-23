@@ -7,10 +7,6 @@
 //
 
 #import "Report.h"
-#import "Audio.h"
-#import "Image.h"
-#import "Note.h"
-#import "Video.h"
 
 
 @implementation Report
@@ -18,9 +14,6 @@
 @dynamic createdAt;
 @dynamic title;
 @dynamic updatedAt;
-@dynamic audios;
-@dynamic images;
-@dynamic notes;
-@dynamic videos;
+@dynamic medias;
 
 @end

@@ -39,7 +39,7 @@
 
 - (NSFetchRequest*)getAllNotesFetchRequestForReport:(Report*)report
 {
-    NSFetchRequest* request = [self getAllObjectsFetchRequest:@"Note"];
+    NSFetchRequest* request = [self getAllObjectsFetchRequest:@"Media"];
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"self.report == %@", report];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp"
                                                                    ascending:YES];

@@ -10,7 +10,7 @@
 #import "CoreDataHelper.h"
 #import "Report.h"
 #import "EntityManager.h"
-#import "Note.h"
+#import "Media.h"
 
 @interface MI6NotesDataSource ()
 
@@ -46,7 +46,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    Note* note = (Note*)[notes objectAtIndex:indexPath.row];
+    Media* note = (Media*)[notes objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", note.timestamp];
     cell.detailTextLabel.text = note.text;

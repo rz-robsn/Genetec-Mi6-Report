@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C13D0AA1840585100A83EB6 /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0A91840585100A83EB6 /* Agent.m */; };
+		3C13D0AD1840585100A83EB6 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0AC1840585100A83EB6 /* Report.m */; };
+		3C13D0B01840585100A83EB6 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C13D0AF1840585100A83EB6 /* Media.m */; };
 		3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */; };
 		3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4270DB18403861000DBC2F /* MI6NotesDataSource.m */; };
 		3C54DD051840083A00CE9F15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C54DD041840083A00CE9F15 /* Foundation.framework */; };
@@ -29,13 +32,6 @@
 		3CB5713B18400A5A005786D6 /* EntityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713818400A5A005786D6 /* EntityManager.m */; };
 		3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */; };
 		3CB571431840111C005786D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CB571411840111C005786D6 /* Model.xcdatamodeld */; };
-		3CB63A6F18405294003933D7 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB63A6E18405294003933D7 /* Note.m */; };
-		3CB63A7218405294003933D7 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB63A7118405294003933D7 /* Image.m */; };
-		3CB63A7518405294003933D7 /* Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB63A7418405294003933D7 /* Audio.m */; };
-		3CB63A7818405294003933D7 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB63A7718405294003933D7 /* Coordinate.m */; };
-		3CB63A7B18405294003933D7 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB63A7A18405294003933D7 /* Report.m */; };
-		3CB63A7E18405294003933D7 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB63A7D18405294003933D7 /* Video.m */; };
-		3CB63A8118405294003933D7 /* Agent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB63A8018405294003933D7 /* Agent.m */; };
 		D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83D486E18400ED70072FBCE /* MI6MainViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C13D0A81840585100A83EB6 /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agent.h; path = Genetec.MI6/Agent.h; sourceTree = "<group>"; };
+		3C13D0A91840585100A83EB6 /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Agent.m; path = Genetec.MI6/Agent.m; sourceTree = "<group>"; };
+		3C13D0AB1840585100A83EB6 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Report.h; path = Genetec.MI6/Report.h; sourceTree = "<group>"; };
+		3C13D0AC1840585100A83EB6 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Genetec.MI6/Report.m; sourceTree = "<group>"; };
+		3C13D0AE1840585100A83EB6 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Media.h; path = Genetec.MI6/Media.h; sourceTree = "<group>"; };
+		3C13D0AF1840585100A83EB6 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Media.m; path = Genetec.MI6/Media.m; sourceTree = "<group>"; };
 		3C4270D618402A85000DBC2F /* MI6SingleReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6SingleReportViewController.h; sourceTree = "<group>"; };
 		3C4270D718402A85000DBC2F /* MI6SingleReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6SingleReportViewController.m; sourceTree = "<group>"; };
 		3C4270DA18403861000DBC2F /* MI6NotesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6NotesDataSource.h; sourceTree = "<group>"; };
@@ -83,20 +85,6 @@
 		3CB5713E18400CB5005786D6 /* MI6DocumentDirectoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6DocumentDirectoryHelper.h; sourceTree = "<group>"; };
 		3CB5713F18400CB5005786D6 /* MI6DocumentDirectoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6DocumentDirectoryHelper.m; sourceTree = "<group>"; };
 		3CB571421840111C005786D6 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		3CB63A6D18405294003933D7 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = Genetec.MI6/Note.h; sourceTree = "<group>"; };
-		3CB63A6E18405294003933D7 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = Genetec.MI6/Note.m; sourceTree = "<group>"; };
-		3CB63A7018405294003933D7 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Image.h; path = Genetec.MI6/Image.h; sourceTree = "<group>"; };
-		3CB63A7118405294003933D7 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Image.m; path = Genetec.MI6/Image.m; sourceTree = "<group>"; };
-		3CB63A7318405294003933D7 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Audio.h; path = Genetec.MI6/Audio.h; sourceTree = "<group>"; };
-		3CB63A7418405294003933D7 /* Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Audio.m; path = Genetec.MI6/Audio.m; sourceTree = "<group>"; };
-		3CB63A7618405294003933D7 /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Genetec.MI6/Coordinate.h; sourceTree = "<group>"; };
-		3CB63A7718405294003933D7 /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinate.m; path = Genetec.MI6/Coordinate.m; sourceTree = "<group>"; };
-		3CB63A7918405294003933D7 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Report.h; path = Genetec.MI6/Report.h; sourceTree = "<group>"; };
-		3CB63A7A18405294003933D7 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Genetec.MI6/Report.m; sourceTree = "<group>"; };
-		3CB63A7C18405294003933D7 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = Genetec.MI6/Video.h; sourceTree = "<group>"; };
-		3CB63A7D18405294003933D7 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = Genetec.MI6/Video.m; sourceTree = "<group>"; };
-		3CB63A7F18405294003933D7 /* Agent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Agent.h; path = Genetec.MI6/Agent.h; sourceTree = "<group>"; };
-		3CB63A8018405294003933D7 /* Agent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Agent.m; path = Genetec.MI6/Agent.m; sourceTree = "<group>"; };
 		D83D486D18400ED70072FBCE /* MI6MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6MainViewController.h; sourceTree = "<group>"; };
 		D83D486E18400ED70072FBCE /* MI6MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,20 +117,12 @@
 		3C4270D518401CB3000DBC2F /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				3CB63A7F18405294003933D7 /* Agent.h */,
-				3CB63A8018405294003933D7 /* Agent.m */,
-				3CB63A7C18405294003933D7 /* Video.h */,
-				3CB63A7D18405294003933D7 /* Video.m */,
-				3CB63A7918405294003933D7 /* Report.h */,
-				3CB63A7A18405294003933D7 /* Report.m */,
-				3CB63A7618405294003933D7 /* Coordinate.h */,
-				3CB63A7718405294003933D7 /* Coordinate.m */,
-				3CB63A7318405294003933D7 /* Audio.h */,
-				3CB63A7418405294003933D7 /* Audio.m */,
-				3CB63A7018405294003933D7 /* Image.h */,
-				3CB63A7118405294003933D7 /* Image.m */,
-				3CB63A6D18405294003933D7 /* Note.h */,
-				3CB63A6E18405294003933D7 /* Note.m */,
+				3C13D0AE1840585100A83EB6 /* Media.h */,
+				3C13D0AF1840585100A83EB6 /* Media.m */,
+				3C13D0AB1840585100A83EB6 /* Report.h */,
+				3C13D0AC1840585100A83EB6 /* Report.m */,
+				3C13D0A81840585100A83EB6 /* Agent.h */,
+				3C13D0A91840585100A83EB6 /* Agent.m */,
 			);
 			name = Entities;
 			path = ..;
@@ -370,22 +350,18 @@
 			files = (
 				3CB5713B18400A5A005786D6 /* EntityManager.m in Sources */,
 				3CB5713A18400A5A005786D6 /* FetchRequestFactory.m in Sources */,
-				3CB63A7E18405294003933D7 /* Video.m in Sources */,
 				3C4270DC18403861000DBC2F /* MI6NotesDataSource.m in Sources */,
-				3CB63A6F18405294003933D7 /* Note.m in Sources */,
-				3CB63A7518405294003933D7 /* Audio.m in Sources */,
 				3C54DD111840083A00CE9F15 /* main.m in Sources */,
 				3CB571431840111C005786D6 /* Model.xcdatamodeld in Sources */,
-				3CB63A7218405294003933D7 /* Image.m in Sources */,
-				3CB63A8118405294003933D7 /* Agent.m in Sources */,
 				3C54DD1B1840083A00CE9F15 /* MI6ViewController.m in Sources */,
 				3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */,
 				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
+				3C13D0B01840585100A83EB6 /* Media.m in Sources */,
 				3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */,
+				3C13D0AA1840585100A83EB6 /* Agent.m in Sources */,
 				D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */,
-				3CB63A7818405294003933D7 /* Coordinate.m in Sources */,
 				3C54DD151840083A00CE9F15 /* MI6AppDelegate.m in Sources */,
-				3CB63A7B18405294003933D7 /* Report.m in Sources */,
+				3C13D0AD1840585100A83EB6 /* Report.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
