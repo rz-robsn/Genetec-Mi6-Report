@@ -37,7 +37,6 @@
 {
     // Return the number of rows in the section.
     return [self.arrayOfReportTitle count];
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -51,9 +50,8 @@
     // Configure the cell...
     NSString* report;
     
-    Report* re=  (Report*)[self.arrayOfReportTitle objectAtIndex:indexPath.row];
-    report = [re title];
-    cell.textLabel.text = report;
+    Report* re =  (Report*)[self.arrayOfReportTitle objectAtIndex:indexPath.row];
+    cell.textLabel.text = re.title == 0 ? @"Untitled" : re.title;
     [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     
     return cell;
