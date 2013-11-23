@@ -40,6 +40,7 @@
 		3CB571431840111C005786D6 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CB571411840111C005786D6 /* Model.xcdatamodeld */; };
 		D83D486F18400ED70072FBCE /* MI6MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83D486E18400ED70072FBCE /* MI6MainViewController.m */; };
 		D866B4EA1840747400F2C2BE /* MI6ReportsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4E91840747400F2C2BE /* MI6ReportsDataSource.m */; };
+		D866B4ED1840EA0E00F2C2BE /* MI6PrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D866B4EC1840EA0E00F2C2BE /* MI6PrintViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		D83D486E18400ED70072FBCE /* MI6MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6MainViewController.m; sourceTree = "<group>"; };
 		D866B4E81840747400F2C2BE /* MI6ReportsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6ReportsDataSource.h; sourceTree = "<group>"; };
 		D866B4E91840747400F2C2BE /* MI6ReportsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6ReportsDataSource.m; sourceTree = "<group>"; };
+		D866B4EB1840EA0E00F2C2BE /* MI6PrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MI6PrintViewController.h; sourceTree = "<group>"; };
+		D866B4EC1840EA0E00F2C2BE /* MI6PrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MI6PrintViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 		D83D486C18400E610072FBCE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D866B4EB1840EA0E00F2C2BE /* MI6PrintViewController.h */,
+				D866B4EC1840EA0E00F2C2BE /* MI6PrintViewController.m */,
 				D83D486D18400ED70072FBCE /* MI6MainViewController.h */,
 				D83D486E18400ED70072FBCE /* MI6MainViewController.m */,
 				3C13D0B41840702400A83EB6 /* MI6Image.h */,
@@ -390,6 +395,7 @@
 				D866B4EA1840747400F2C2BE /* MI6ReportsDataSource.m in Sources */,
 				3C13D0BC1840843200A83EB6 /* Media.m in Sources */,
 				3CB5714018400CB5005786D6 /* MI6DocumentDirectoryHelper.m in Sources */,
+				D866B4ED1840EA0E00F2C2BE /* MI6PrintViewController.m in Sources */,
 				3CB5713918400A5A005786D6 /* CoreDataHelper.m in Sources */,
 				3C13D0B61840702400A83EB6 /* MI6Image.m in Sources */,
 				3C4270D818402A85000DBC2F /* MI6SingleReportViewController.m in Sources */,

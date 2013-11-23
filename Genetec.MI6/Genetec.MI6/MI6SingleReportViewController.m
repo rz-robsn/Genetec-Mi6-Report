@@ -16,7 +16,7 @@
 #import "MI6Image.h"
 #import "MI6DocumentDirectoryHelper.h"
 #import "MI6GPSLocationDetector.h"
-
+#import "MI6PrintViewController.h"
 @interface MI6SingleReportViewController ()
 
 @property (strong,nonatomic) MI6NotesDataSource *datasource;
@@ -95,6 +95,9 @@
         NSIndexPath *selectedRowIndexPath = [self.tableView indexPathForSelectedRow];
         MI6DisplayMediaViewController* destVc = (MI6DisplayMediaViewController*) [segue destinationViewController];
         destVc.media = [self.datasource.notes objectAtIndex:selectedRowIndexPath.row];
+    }else if([[segue identifier] isEqualToString:@"PrintSegue"]){
+        MI6PrintViewController* destPrint = (MI6PrintViewController*) [segue destinationViewController];
+        destPrint.report = report;
     }
 }
 
@@ -119,6 +122,15 @@
         [self performSegueWithIdentifier:@"DisplayMediaSegue" sender:nil];
     }
 }
+- (IBAction)Options:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@""
+                                  delegate:self
+                                  cancelButtonTitle:@"Cancel"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"Print", @"Email", nil];
+    [actionSheet showInView:self.view];
+}
 
 #pragma mark - UIActionSheetDelegate
 
@@ -137,6 +149,11 @@
         
         
         [[ [MI6Image alloc] init ] startCameraControllerForVedioOrPic:self usingDelegate:self];
+        
+    }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Print" ]){
+        
+        [self performSegueWithIdentifier:@"PrintSegue" sender:nil];
+
         
     }
 
