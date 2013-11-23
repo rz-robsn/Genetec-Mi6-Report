@@ -10,7 +10,8 @@
 
 @class Report;
 
-@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate , UIAlertViewDelegate, UITableViewDelegate>
+@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate , UIAlertViewDelegate, UITableViewDelegate,
+UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) Report* report;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

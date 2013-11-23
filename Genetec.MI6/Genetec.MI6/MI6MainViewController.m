@@ -10,18 +10,20 @@
 #import "MI6SingleReportViewController.h"
 #import "EntityManager.h"
 #import "Report.h"
+#import "CoreDataHelper.h"
+#import "MI6ReportsDataSource.h"
 #import "MI6Image.h"
-#import <AssetsLibrary/AssetsLibrary.h>
+#import "Media.h"
 @interface MI6MainViewController ()
 
 @property (strong,nonatomic) NSDate* date;
 @property (strong,nonatomic) NSMutableArray* filteredArray;
-@property (strong, nonatomic) UIImage* image;
+@property (strong,nonatomic) MI6ReportsDataSource* datasource;
 
 @end
 
 @implementation MI6MainViewController
-
+Report* reportWithImage;
 @synthesize filteredArray;
 @synthesize datasource;
 
@@ -91,14 +93,9 @@ int sendByActionSheet; // when press new note set this to 1;
         [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
         
     }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo" ]) {
-        MI6Image* imageTaken = [ [MI6Image alloc] init ];
         
-        if ( [ imageTaken startCameraControllerFromViewController:self usingDelegate:self]){
-        }
-          
-        
+        [[ [MI6Image alloc] init ] startCameraControllerFromViewController:self usingDelegate:self];
     }
-    
 }
 
 //// For responding to the user accepting a newly-captured picture or movie
@@ -107,14 +104,21 @@ int sendByActionSheet; // when press new note set this to 1;
     
     UIImage *imageL = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    self.image = imageL;
-    NSLog(@"%@" ,[self.image description]);
+ 
     [self dismissViewControllerAnimated:YES completion:nil];
     // Request to save the image to camera roll
-
+  //  NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(imageL)];
     
-   // UIImageWriteToSavedPhotosAlbum (self.image, nil, nil , nil);
-   // [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
+    
+    // Transform the image to NSData
+    NSData *savedImageData = UIImagePNGRepresentation(imageL);
+    reportWithImage = [[[CoreDataHelper instance] entityManager] createNewReport];
+    Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
+    media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
+    media.data = savedImageData;
+    media.type = [NSNumber numberWithInt:MEDIA_TYPE_IMAGE];
+    [reportWithImage addMedias:[NSSet setWithObject:media]];
+    [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
     
 }
 
@@ -129,12 +133,7 @@ int sendByActionSheet; // when press new note set this to 1;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [filteredArray count];
-    } else {
-        return [self.arrayOfReportTitle count];
-    }
-   
+    return [filteredArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -245,7 +244,10 @@ int sendByActionSheet; // when press new note set this to 1;
         if(sendByActionSheet == 1){
              [ segue.destinationViewController setReport:nil];
              sendByActionSheet = 0;
-        }else{
+        }else if(reportWithImage != 0){
+            [segue.destinationViewController setReport:reportWithImage];
+        }
+        else{
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             [segue.destinationViewController setReport:[self.datasource.arrayOfReportTitle objectAtIndex:indexPath.row]];
             

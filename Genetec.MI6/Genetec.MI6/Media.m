@@ -2,7 +2,7 @@
 //  Media.m
 //  Genetec.MI6
 //
-//  Created by DataMobile on 2013-11-22.
+//  Created by DataMobile on 2013-11-23.
 //  Copyright (c) 2013 Zachary Patterson. All rights reserved.
 //
 
@@ -12,13 +12,13 @@
 
 @implementation Media
 
-@dynamic drawing_url;
+@dynamic drawing_data;
 @dynamic latitude;
 @dynamic longitude;
 @dynamic text;
 @dynamic timestamp;
 @dynamic type;
-@dynamic url;
+@dynamic data;
 @dynamic report;
 
 @end

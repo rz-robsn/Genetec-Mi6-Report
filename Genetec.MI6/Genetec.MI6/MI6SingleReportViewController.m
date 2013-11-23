@@ -12,6 +12,7 @@
 #import "CoreDataHelper.h"
 #import "EntityManager.h"
 #import "MI6NotesDataSource.h"
+#import "MI6Image.h"
 
 @interface MI6SingleReportViewController ()
 @property (strong,nonatomic) UITextView *textView;
@@ -88,11 +89,57 @@
     }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo" ]) {
         
         
-        
+        [[ [MI6Image alloc] init ] startCameraControllerForVedioOrPic:self usingDelegate:self];
         
     }
 
 }
+
+//// For responding to the user accepting a newly-captured picture or movie
+- (void) imagePickerController: (UIImagePickerController *) picker
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
+    
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    // Handle a still image capture
+    if ([mediaType isEqualToString:@"public.image"]){
+           NSLog(@"%@",mediaType);
+        UIImage *imageL = [info objectForKey:UIImagePickerControllerOriginalImage];
+        NSData *savedImageData = UIImagePNGRepresentation(imageL);
+//        Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
+//        media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
+//        media.data = savedImageData;
+//        media.type = [NSNumber numberWithInt:MEDIA_TYPE_IMAGE];
+//        [report addMedias:[NSSet setWithObject:media]];
+        
+    }else if([mediaType isEqualToString:@"public.movie"]){
+        NSString *moviePath =  [[info objectForKey:UIImagePickerControllerMediaURL] path];
+        NSURL *videoUrl =[info objectForKey:UIImagePickerControllerMediaURL];
+        NSData *savedVideo = [NSData dataWithContentsOfFile:moviePath];
+//        Media* media = [[[CoreDataHelper instance] entityManager] createNewMedia];
+//        media.timestamp = [NSDate dateWithTimeIntervalSinceNow:0];
+//        media.data = savedVideo;
+//        media.type = [NSNumber numberWithInt:MEDIA_TYPE_VIDEO];
+//        [report addMedias:[NSSet setWithObject:media]];
+    }
+    
+ 
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // Request to save the image to camera roll
+    //  NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(imageL)];
+    
+    
+    // Transform the image to NSData
+   // NSData *savedImageData = UIImagePNGRepresentation(imageL);
+    
+}
+
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
