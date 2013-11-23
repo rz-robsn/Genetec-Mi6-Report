@@ -17,6 +17,8 @@
 #import "MI6DocumentDirectoryHelper.h"
 #import "MI6GPSLocationDetector.h"
 #import "MI6PrintViewController.h"
+#import "MI6MapViewController.h"
+
 @interface MI6SingleReportViewController ()
 
 @property (strong,nonatomic) MI6NotesDataSource *datasource;
@@ -85,7 +87,9 @@
     [self.view endEditing:YES];
 }
 
-- (IBAction)mapButtonItemTapped:(id)sender {
+- (IBAction)mapTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"MapViewSegue" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -98,6 +102,11 @@
     }else if([[segue identifier] isEqualToString:@"PrintSegue"]){
         MI6PrintViewController* destPrint = (MI6PrintViewController*) [segue destinationViewController];
         destPrint.report = report;
+    }
+    else if([[segue identifier] isEqualToString:@"MapViewSegue"])
+    {
+        MI6MapViewController* destVc = (MI6MapViewController*) [segue destinationViewController];
+        [destVc setReport:self.report];
     }
 }
 

@@ -28,6 +28,6 @@
 - (IBAction)titleTextFieldEditingDidEnd:(id)sender;
 
 - (IBAction)onViewTapped:(id)sender;
-- (IBAction)mapButtonItemTapped:(id)sender;
+- (IBAction)mapTapped:(id)sender;
 
 @end

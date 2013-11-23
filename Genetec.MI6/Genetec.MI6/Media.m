@@ -21,4 +21,20 @@
 @dynamic data;
 @dynamic report;
 
+# pragma mark - MKAnnotation
+
+- (CLLocationCoordinate2D)coordinate
+{
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+}
+
+- (NSString *)title {
+	return [self.timestamp description];
+}
+
+- (NSString *)subtitle {
+	return ([self.type intValue] == MEDIA_TYPE_VIDEO) ? @"" : self.text;
+}
+
+
 @end

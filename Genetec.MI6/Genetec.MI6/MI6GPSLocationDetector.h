@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "MI6GPSLocationDetectorDelegate.h"
 
-@class Media;
+@class Media, Report;
 
 @interface MI6GPSLocationDetector : NSObject <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) Media* media;
+@property (strong, nonatomic) Report* report;
+
 @property (weak, nonatomic) id<MI6GPSLocationDetectorDelegate> delegate;
 
 -(void)startFetchingCurrentLocation;

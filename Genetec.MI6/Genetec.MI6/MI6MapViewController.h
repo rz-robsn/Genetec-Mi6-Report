@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@class Media;
+@class Report;
 
-@interface MI6MapViewController : UIViewController
+@interface MI6MapViewController : UIViewController <MKMapViewDelegate>
 
-@property (strong, nonatomic) Media* media;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (strong, nonatomic) Report* report;
 
 @end

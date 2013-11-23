@@ -24,6 +24,7 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     
     [[[CoreDataHelper instance] entityManager] saveContext];
+    [[CoreDataHelper instance] resetContext];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -46,11 +47,13 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [[[CoreDataHelper instance] entityManager] saveContext];
+    [[CoreDataHelper instance] resetContext];
 }
 
 - (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
 {
     [[[CoreDataHelper instance] entityManager] saveContext];
+    [[CoreDataHelper instance] resetContext];
 }
 
 @end
