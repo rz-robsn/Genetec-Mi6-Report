@@ -69,7 +69,7 @@
                                   delegate:self
                                   cancelButtonTitle:@"Cancel"
                                   destructiveButtonTitle:nil
-                                  otherButtonTitles:@"New Note", @"Take Photo or Video", @"Record Audio", nil];
+                                  otherButtonTitles:@"New Note", @"Take Photo or Video",  nil];
     [actionSheet showInView:self.view];
 }
 
