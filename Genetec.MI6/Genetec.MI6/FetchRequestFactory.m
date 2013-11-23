@@ -7,6 +7,7 @@
 //
 
 #import "FetchRequestFactory.h"
+#import "Report.h"
 
 @interface FetchRequestFactory()
 
@@ -33,6 +34,17 @@
     
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     request.entity = eDescription;
+    return request;
+}
+
+- (NSFetchRequest*)getAllNotesFetchRequestForReport:(Report*)report
+{
+    NSFetchRequest* request = [self getAllObjectsFetchRequest:@"Note"];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"self.report == %@", report];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timestamp"
+                                                                   ascending:YES];
+    [request setPredicate:predicate];
+    [request setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
     return request;
 }
 

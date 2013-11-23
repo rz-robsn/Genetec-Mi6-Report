@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class Report;
+
 /**
  * This class manages Entities specfied in the DataMobile Core Data Model file.
  */
@@ -18,5 +20,7 @@
 - (void)saveContext;
 
 - (void)deleteAllObjects:(NSString *)entityName;
+
+- (NSArray*)getAllNotesForReport:(Report*)report;
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation Agent
 
-@dynamic name;
 @dynamic id;
+@dynamic name;
 
 @end

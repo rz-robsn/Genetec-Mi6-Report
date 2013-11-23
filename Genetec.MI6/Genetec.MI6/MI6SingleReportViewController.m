@@ -7,12 +7,17 @@
 //
 
 #import "MI6SingleReportViewController.h"
+#import "MI6NotesDataSource.h"
 
 @interface MI6SingleReportViewController ()
+
+@property (strong, nonatomic) id<UITableViewDataSource> datasource;
 
 @end
 
 @implementation MI6SingleReportViewController
+
+@synthesize report;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +32,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    _datasource = [[MI6NotesDataSource alloc] initWithReport:report];
+    self.tableView.dataSource = _datasource;
+    self.tableView.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +55,9 @@
     [actionSheet showInView:self.view];
 }
 
-- (IBAction)titleTextFieldEditingDidEnd:(id)sender {
+- (IBAction)titleTextFieldEditingDidEnd:(id)sender
+{
+    
 }
 
 #pragma mark - UIActionSheetDelegate

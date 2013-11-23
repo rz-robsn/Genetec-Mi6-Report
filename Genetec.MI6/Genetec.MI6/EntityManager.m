@@ -78,4 +78,10 @@
                                                      error:&error];
 }
 
+- (NSArray*)getAllNotesForReport:(Report*)report
+{
+    NSFetchRequest *fetchRequest = [self.fetchRequestFactory getAllNotesFetchRequestForReport:report];
+    return [self fetchRequest:fetchRequest];
+}
+
 @end

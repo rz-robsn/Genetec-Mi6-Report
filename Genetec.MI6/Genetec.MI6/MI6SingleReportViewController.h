@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate>
+@class Report;
+
+@interface MI6SingleReportViewController : UIViewController <UIActionSheetDelegate, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) Report* report ;
 
 - (IBAction)NewBarButtonItemTapped:(id)sender;
 - (IBAction)titleTextFieldEditingDidEnd:(id)sender;
