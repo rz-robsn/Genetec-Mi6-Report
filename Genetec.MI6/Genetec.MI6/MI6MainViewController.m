@@ -10,13 +10,15 @@
 #import "MI6SingleReportViewController.h"
 #import "EntityManager.h"
 #import "Report.h"
+#import "MI6Image.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 @interface MI6MainViewController ()
 
 @property (strong,nonatomic) NSArray* arrayOfReportTitle;
 @property (strong,nonatomic) NSArray* dateOfReport;
 @property (strong,nonatomic) NSDate* date;
 @property (strong,nonatomic) NSMutableArray* filteredArray;
-
+@property (strong, nonatomic) UIImage* image;
 
 @end
 
@@ -96,14 +98,41 @@ int sendByActionSheet; // when press new note set this to 1;
         [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
         
     }else if ([[actionSheet buttonTitleAtIndex:buttonIndex] isEqualToString:@"Take Photo" ]) {
-        // Lazily allocate image picker controller
+        MI6Image* imageTaken = [ [MI6Image alloc] init ];
         
-        
+        if ( [ imageTaken startCameraControllerFromViewController:self usingDelegate:self]){
+        }
           
         
     }
     
 }
+
+//// For responding to the user accepting a newly-captured picture or movie
+- (void) imagePickerController: (UIImagePickerController *) picker
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
+    UIImage *imageL = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    self.image = imageL;
+    NSLog(@"%@" ,[self.image description]);
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // Request to save the image to camera roll
+
+    
+   // UIImageWriteToSavedPhotosAlbum (self.image, nil, nil , nil);
+   // [self performSegueWithIdentifier:@"SingleReportSegue" sender:self];
+    
+}
+
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -112,7 +141,7 @@ int sendByActionSheet; // when press new note set this to 1;
     } else {
         return [self.arrayOfReportTitle count];
     }
-    //return [self.arrayOfReportTitle count];
+   
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -247,3 +276,9 @@ int sendByActionSheet; // when press new note set this to 1;
 
 
 @end
+
+
+
+
+
+

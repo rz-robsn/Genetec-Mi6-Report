@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MI6MainViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MI6MainViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate,
+UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
