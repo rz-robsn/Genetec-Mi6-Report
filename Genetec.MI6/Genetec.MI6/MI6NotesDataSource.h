@@ -16,4 +16,6 @@
 
 - (MI6NotesDataSource*)initWithReport:(Report*)report;
 
+- (void)update;
+
 @end

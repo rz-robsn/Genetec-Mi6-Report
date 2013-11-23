@@ -10,7 +10,7 @@
 #import "CoreDataHelper.h"
 #import "Report.h"
 #import "EntityManager.h"
-#import "Note.h"
+#import "Media.h"
 
 @interface MI6NotesDataSource ()
 
@@ -28,10 +28,16 @@
 {
     if(self = [super init])
     {
-        notes = (report == nil) ? [[[CoreDataHelper instance] entityManager] getAllNotesForReport:report]
+        notes = (report != nil) ? [[[CoreDataHelper instance] entityManager] getAllNotesForReport:report]
                 : [[NSArray alloc] init];
+        self.report = report;
     }
     return self;
+}
+
+- (void)update
+{
+    notes = [[[CoreDataHelper instance] entityManager] getAllNotesForReport:report];
 }
 
 #pragma mark - UITableViewDataSource
@@ -43,10 +49,14 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%li", (long)indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:CellIdentifier];
+    }
     
-    Note* note = (Note*)[notes objectAtIndex:indexPath.row];
+    Media* note = (Media*)[notes objectAtIndex:indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", note.timestamp];
     cell.detailTextLabel.text = note.text;

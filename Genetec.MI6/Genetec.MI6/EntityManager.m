@@ -83,7 +83,26 @@
     NSError* error;
      return [self.managedObjectContext executeFetchRequest:[self.fetchRequestFactory getAllObjectsFetchRequest:@"Report"] error:&error];
 
-     
+    
 }
+
+- (NSArray*)getAllNotesForReport:(Report*)report
+{
+    NSFetchRequest* fetchRequest = [self.fetchRequestFactory getAllNotesFetchRequestForReport:report];
+    return [self fetchRequest:fetchRequest];
+}
+
+- (Media*)createNewMedia
+{
+    return (Media*) [NSEntityDescription insertNewObjectForEntityForName:@"Media"
+                                                  inManagedObjectContext:managedObjectContext];
+}
+
+- (Report*)createNewReport
+{
+    return (Report*)[NSEntityDescription insertNewObjectForEntityForName:@"Report"
+                                                  inManagedObjectContext:managedObjectContext];
+}
+
 
 @end
