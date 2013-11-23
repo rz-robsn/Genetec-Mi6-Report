@@ -185,9 +185,14 @@ int sendByActionSheet; // when press new note set this to 1;
     // Update the filtered array based on the search text and scope.
     // Remove all objects from the filtered search array
     [self.filteredArray removeAllObjects];
+    
     // Filter the array using NSPredicate
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];
-    filteredArray = [NSMutableArray arrayWithArray:[self.datasource.arrayOfReportTitle filteredArrayUsingPredicate:predicate]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.title contains[c] %@",searchText];
+    NSArray* filteredReports = [NSMutableArray arrayWithArray:[self.datasource.arrayOfReportTitle filteredArrayUsingPredicate:predicate]];
+    
+    for (Report* report in filteredReports) {
+        [filteredArray addObject:report.title];
+    }
 }
 
 
