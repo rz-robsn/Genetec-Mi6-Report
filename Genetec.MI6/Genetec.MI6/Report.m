@@ -19,8 +19,8 @@
 @dynamic title;
 @dynamic updatedAt;
 @dynamic audios;
-@dynamic videos;
 @dynamic images;
 @dynamic notes;
+@dynamic videos;
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "Audio.h"
+#import "Coordinate.h"
+#import "Report.h"
 
 
 @implementation Audio
@@ -14,5 +16,6 @@
 @dynamic timestamp;
 @dynamic url;
 @dynamic coordinate;
+@dynamic report;
 
 @end

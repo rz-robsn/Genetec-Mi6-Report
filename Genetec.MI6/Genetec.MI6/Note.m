@@ -7,11 +7,13 @@
 //
 
 #import "Note.h"
+#import "Report.h"
 
 
 @implementation Note
 
 @dynamic text;
 @dynamic timestamp;
+@dynamic report;
 
 @end

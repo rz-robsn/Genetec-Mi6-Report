@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class Report;
+
 /**
  * The role of this class is to create custom NSFetchRequest objects
  * to be used to manage the entities specifed in the DataMobile Core Data Model
@@ -23,6 +25,8 @@
  @returns the fetch request object
  */
 - (NSFetchRequest*)getAllObjectsFetchRequest:(NSString *)entityName;
+
+- (NSFetchRequest*)getAllNotesFetchRequestForReport:(Report*)report;
 
 
 @end

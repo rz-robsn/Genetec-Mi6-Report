@@ -12,7 +12,7 @@
 
 @interface Agent : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * id;
+@property (nonatomic, retain) NSString * name;
 
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Coordinate, Report;
 
 @interface Image : NSManagedObject
 
@@ -16,6 +17,7 @@
 @property (nonatomic, retain) NSString * img_url;
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSDate * timestamp;
-@property (nonatomic, retain) NSManagedObject *coordinate;
+@property (nonatomic, retain) Coordinate *coordinate;
+@property (nonatomic, retain) Report *report;
 
 @end

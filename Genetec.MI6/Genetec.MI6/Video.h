@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Coordinate, Report;
 
 @interface Video : NSManagedObject
 
 @property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSManagedObject *coordinate;
+@property (nonatomic, retain) Coordinate *coordinate;
+@property (nonatomic, retain) Report *report;
 
 @end

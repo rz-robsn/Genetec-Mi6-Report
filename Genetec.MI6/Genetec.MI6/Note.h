@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Report;
 
 @interface Note : NSManagedObject
 
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSDate * timestamp;
+@property (nonatomic, retain) Report *report;
 
 @end

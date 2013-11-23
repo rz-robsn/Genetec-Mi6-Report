@@ -7,6 +7,8 @@
 //
 
 #import "Image.h"
+#import "Coordinate.h"
+#import "Report.h"
 
 
 @implementation Image
@@ -16,5 +18,6 @@
 @dynamic text;
 @dynamic timestamp;
 @dynamic coordinate;
+@dynamic report;
 
 @end

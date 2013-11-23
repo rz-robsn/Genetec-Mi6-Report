@@ -16,9 +16,37 @@
 @property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSDate * updatedAt;
-@property (nonatomic, retain) Audio *audios;
-@property (nonatomic, retain) Video *videos;
-@property (nonatomic, retain) Image *images;
-@property (nonatomic, retain) Note *notes;
+@property (nonatomic, retain) NSSet *audios;
+@property (nonatomic, retain) NSSet *images;
+@property (nonatomic, retain) NSSet *notes;
+@property (nonatomic, retain) NSOrderedSet *videos;
+@end
 
+@interface Report (CoreDataGeneratedAccessors)
+
+- (void)addAudiosObject:(Audio *)value;
+- (void)removeAudiosObject:(Audio *)value;
+- (void)addAudios:(NSSet *)values;
+- (void)removeAudios:(NSSet *)values;
+
+- (void)addImagesObject:(Image *)value;
+- (void)removeImagesObject:(Image *)value;
+- (void)addImages:(NSSet *)values;
+- (void)removeImages:(NSSet *)values;
+
+- (void)addNotesObject:(Note *)value;
+- (void)removeNotesObject:(Note *)value;
+- (void)addNotes:(NSSet *)values;
+- (void)removeNotes:(NSSet *)values;
+
+- (void)insertObject:(Video *)value inVideosAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromVideosAtIndex:(NSUInteger)idx;
+- (void)insertVideos:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeVideosAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInVideosAtIndex:(NSUInteger)idx withObject:(Video *)value;
+- (void)replaceVideosAtIndexes:(NSIndexSet *)indexes withVideos:(NSArray *)values;
+- (void)addVideosObject:(Video *)value;
+- (void)removeVideosObject:(Video *)value;
+- (void)addVideos:(NSOrderedSet *)values;
+- (void)removeVideos:(NSOrderedSet *)values;
 @end
